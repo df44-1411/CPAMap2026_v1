@@ -2,9 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
 <style>
-    /* CUSTOM SCROLLBAR (ESTILO CYBERPUNK) */
+    /* CUSTOM SCROLLBAR */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
     ::-webkit-scrollbar-thumb { background: #1c3d5e; border-radius: 4px; border: 1px solid rgba(0, 243, 255, 0.1); }
@@ -141,13 +145,11 @@
     
 <script>
     const cards = document.querySelectorAll('.army-card');
-    
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             const name = card.querySelector('.army-name').innerText;
             window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
         });
-
         card.addEventListener('mouseleave', () => {
             window.parent.postMessage({ type: 'resetMap' }, '*');
         });
