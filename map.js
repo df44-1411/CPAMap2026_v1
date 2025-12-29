@@ -1525,7 +1525,6 @@ Highcharts.mapChart('container', {
     //	point.graphic.addClass('ARMYSHORT'); *PLEASE USE ABBREV. HERE*
     //}
     if (point.controller === "Club Penguin Armies") {
-      // Add a class to the map area
       point.graphic.addClass('CPA');
     }
     if (point.controller === "CPA Battleground"){
@@ -1537,40 +1536,95 @@ Highcharts.mapChart('container', {
     if (point.controller === "Freeland"){
     	point.graphic.addClass('Free');
     }
-    if (point.controller === "Water Vikings"){
-    	point.graphic.addClass('WV');
+
+    // UPDATED AND NEW ARMIES
+    if (point.controller === "Templars"){
+    	point.graphic.addClass('TCP');
     }
     if (point.controller === "Army of Club Penguin"){
     	point.graphic.addClass('ACP');
     }
-    if (point.controller === "Elite Guardians of Club Penguin"){
-    	point.graphic.addClass('EGCP');
+    if (point.controller === "Doritos of Club Penguin"){
+    	point.graphic.addClass('DCP');
     }
     if (point.controller === "Special Weapons and Tactics"){
     	point.graphic.addClass('SWAT');
     }
-    if (point.controller === "Silver Empire"){
-    	point.graphic.addClass('SE');
-    }
-    if (point.controller === "People's Imperial Confederation"){
-    	point.graphic.addClass('PIC');
-    }
-    if (point.controller === "Dark Pirates"){
-    	point.graphic.addClass('DP');
-    }
-    if (point.controller === "Templars"){
-    	point.graphic.addClass('TCP');
+    if (point.controller === "Help Force"){
+    	point.graphic.addClass('HF');
     }
     if (point.controller === "Rebel Penguin Federation"){
     	point.graphic.addClass('RPF');
     }
+    if (point.controller === "Aliens"){
+    	point.graphic.addClass('ALIENS');
+    }
+    if (point.controller === "Scarlet Republic"){
+    	point.graphic.addClass('SR');
+    }
+    if (point.controller === "Water Vikings"){
+    	point.graphic.addClass('WV');
+    }
+    if (point.controller === "Penguins of Agartha"){
+    	point.graphic.addClass('PoA');
+    }
+    if (point.controller === "Fire Vikings"){
+    	point.graphic.addClass('FV');
+    }
+    if (point.controller === "Elite Guardians of CP" || point.controller === "Elite Guardians of Club Penguin"){
+    	point.graphic.addClass('EGCP');
+    }
+    if (point.controller === "Star Force"){
+    	point.graphic.addClass('SF');
+    }
+    if (point.controller === "Dark Warriors"){
+    	point.graphic.addClass('DW');
+    }
+    if (point.controller === "Shreks of CP"){
+    	point.graphic.addClass('SHREKS');
+    }
+    if (point.controller === "People's Imperial Confederation"){
+    	point.graphic.addClass('PIC');
+    }
+    if (point.controller === "wii phone"){
+    	point.graphic.addClass('WII');
+    }
+    if (point.controller === "Romans"){
+    	point.graphic.addClass('ROMANS');
+    }
+    if (point.controller === "Dillon's Underground Mafias Army"){
+    	point.graphic.addClass('DUMA');
+    }
+    if (point.controller === "Seraphic Imperium"){
+    	point.graphic.addClass('SI');
+    }
+    if (point.controller === "Void Troops"){
+    	point.graphic.addClass('VT');
+    }
+    if (point.controller === "Shadow Legionaries"){
+    	point.graphic.addClass('SL');
+    }
+    if (point.controller === "Marines"){
+    	point.graphic.addClass('MARINES');
+    }
+    if (point.controller === "Kanye West Army"){
+    	point.graphic.addClass('YE');
+    }
+    if (point.controller === "Tsunamis of Club Penguin"){
+    	point.graphic.addClass('TSUNAMIS');
+    }
+
+    // OLDER ARMIES PRESERVED
+    if (point.controller === "Silver Empire"){
+    	point.graphic.addClass('SE');
+    }
+    if (point.controller === "Dark Pirates"){
+    	point.graphic.addClass('DP');
+    }
     if (point.controller === "Winged Hussars"){
     	point.graphic.addClass('WH');
     }
-     if (point.controller === "Help Force"){
-    	point.graphic.addClass('HF');
-    }
-     if (point.controller === "Smart Penguins"){
+    if (point.controller === "Smart Penguins"){
     	point.graphic.addClass('SP');
     }
     if (point.controller === "Warlords of Kosmos"){
