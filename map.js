@@ -522,7 +522,7 @@ Highcharts.mapChart('container', {
                     <div class="map-tooltip-info">
                         <div><strong>Owner:</strong> ${armyName}</div>
                         <div><strong>Type:</strong> ${serverType}</div>
-                        <div><strong>Region:</strong> ${continent}</div>
+                        <div><strong>Continent:</strong> ${continent}</div>
                     </div>
                 </div>
             `;
@@ -536,7 +536,7 @@ Highcharts.mapChart('container', {
         dataLabels: {
             enabled: true,
             style: {
-                textOutline: 'none', 
+                textOutline: '1px black', // AQUI ESTÁ O CONTORNO PRETO
                 color: '#e0e6ed',
                 fontWeight: 'normal',
                 fontSize: '11px',
