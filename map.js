@@ -486,30 +486,42 @@ Highcharts.mapChart('container', {
       name: 'cpa',
       // ... dentro de series: [{ ...
     
-    tooltip: {
+      tooltip: {
         useHTML: true,
         backgroundColor: 'transparent',
         borderWidth: 0,
         shadow: false,
         padding: 0,
         formatter: function() {
+            // MAPA DE CORES (Baseado no teu map.css)
+            const armyColors = {
+                "Club Penguin Armies": "#87d1ff", // CPA
+                "CPA Battleground": "#dd2100",    // CPAB
+                "Club Penguin Army Judges": "#ca2244", // CPAJ
+                "Water Vikings": "#000080",       // WV
+                "Army of Club Penguin": "#008000", // ACP
+                "Elite Guardians of Club Penguin": "grey", // EGCP
+                "Special Weapons and Tactics": "#00ff00", // SWAT
+                "Silver Empire": "#ffffff",       // SE
+                "People's Imperial Confederation": "#333399", // PIC
+                "Dark Pirates": "#800000",        // DP
+                "Templars": "#ffcc00",            // TCP
+                "Rebel Penguin Federation": "#000000", // RPF
+                "Winged Hussars": "#ff0000",      // WH
+                "Help Force": "#0000ff",          // HF
+                "Smart Penguins": "red",          // SP
+                "Warlords of Kosmos": "black",    // WOK
+                "Freeland": "#666666"             // Freeland
+            };
+
             const point = this.point;
             const armyName = point.controller;
+            // Pega a cor ou usa cinzento se não encontrar
+            const accentColor = armyColors[armyName] || '#666666'; 
             
-            // LÓGICA AUTOMÁTICA:
-            // 1. Olha para o elemento gráfico do mapa (o país)
-            // 2. Pergunta ao navegador: "Qual é a cor de preenchimento (fill) disto?"
-            // 3. Usa essa cor para a borda e texto do tooltip
-            let accentColor = '#666666'; // Cor de segurança (cinzento)
-            
-            if (point.graphic && point.graphic.element) {
-                // Isto vai buscar a cor exata definida no teu map.css (.WV, .TCP, etc)
-                accentColor = window.getComputedStyle(point.graphic.element).fill;
-            }
-
-            // Estilos dinâmicos usando a cor capturada
+            // Estilos CSS inline para injetar a cor correta
             const borderStyle = `border-left: 5px solid ${accentColor};`;
-            const titleStyle = `color: ${accentColor};`;
+            const titleStyle = `color: ${accentColor}; text-shadow: 0 0 5px ${accentColor};`;
 
             // O HTML DO CARTÃO
             return `
