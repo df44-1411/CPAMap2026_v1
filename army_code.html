@@ -15,7 +15,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #00f3ff; box-shadow: 0 0 10px #00f3ff; }
     html { scrollbar-width: thin; scrollbar-color: #1c3d5e rgba(0, 0, 0, 0.2); }
 
-    /* ESTILO GERAL */
+    /* GENERAL STYLE */
     body {
         background: transparent;
         font-family: 'Rajdhani', sans-serif;
@@ -68,18 +68,8 @@
 </head>
 <body>
 
-    <div class="army-card" style="border-left-color: #90ee90;">
-        <span class="army-name">Aliens</span>
-        <span class="army-count">1</span>
-    </div>
-    
-    <div class="army-card" style="border-left-color: #730000;">
-        <span class="army-name">Romans</span>
-        <span class="army-count">1</span>
-    </div>
-    
-    <div class="army-card" style="border-left-color: #46b8ff;">
-        <span class="army-name">Marines</span>
+    <div class="army-card" style="border-left-color: #000dff;">
+        <span class="army-name">Help Force</span>
         <span class="army-count">1</span>
     </div>
     
@@ -145,7 +135,7 @@
     
     <div class="army-card" style="border-left-color: #666666;">
         <span class="army-name">Freeland</span>
-        <span class="army-count">5</span>
+        <span class="army-count">4</span>
     </div>
     
     <div class="army-card" style="border-left-color: #787e7f;">
@@ -163,6 +153,21 @@
         <span class="army-count">6</span>
     </div>
     
+<script>
+    const cards = document.querySelectorAll('.army-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const name = card.querySelector('.army-name').innerText;
+            window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
+        });
+        card.addEventListener('mouseleave', () => {
+            window.parent.postMessage({ type: 'resetMap' }, '*');
+        });
+    });
+</script>
+</body>
+</html>
+
 <script>
     const cards = document.querySelectorAll('.army-card');
     cards.forEach(card => {
