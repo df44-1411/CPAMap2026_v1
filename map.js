@@ -484,10 +484,48 @@ Highcharts.mapChart('container', {
     series: [{
 
       name: 'cpa',
-      tooltip: {
-        headerFormat: '',
-        pointFormat: '<b>Server:</b> {point.name}<br><b>Controller:</b> {point.controller}<br><b>Type:</b> {point.type}<br><b>Continent:</b> {point.continent}'
-      },
+      // ... dentro de series: [{ ...
+    
+    tooltip: {
+        useHTML: true,
+        backgroundColor: 'transparent',
+        borderWidth: 0,
+        shadow: false,
+        padding: 0,
+        formatter: function() {
+            const point = this.point;
+            const armyName = point.controller;
+            
+            // LÓGICA AUTOMÁTICA:
+            // 1. Olha para o elemento gráfico do mapa (o país)
+            // 2. Pergunta ao navegador: "Qual é a cor de preenchimento (fill) disto?"
+            // 3. Usa essa cor para a borda e texto do tooltip
+            let accentColor = '#666666'; // Cor de segurança (cinzento)
+            
+            if (point.graphic && point.graphic.element) {
+                // Isto vai buscar a cor exata definida no teu map.css (.WV, .TCP, etc)
+                accentColor = window.getComputedStyle(point.graphic.element).fill;
+            }
+
+            // Estilos dinâmicos usando a cor capturada
+            const borderStyle = `border-left: 5px solid ${accentColor};`;
+            const titleStyle = `color: ${accentColor};`;
+
+            // O HTML DO CARTÃO
+            return `
+                <div class="map-tooltip-card" style="${borderStyle}">
+                    <div class="map-tooltip-header" style="${titleStyle}">
+                        ${point.name}
+                    </div>
+                    <div class="map-tooltip-info">
+                        <div><strong>Owner:</strong> ${armyName}</div>
+                        <div><strong>Type:</strong> ${point.type}</div>
+                        <div><strong>Region:</strong> ${point.continent}</div>
+                    </div>
+                </div>
+            `;
+        }
+    },
 
 
       dataLabels: {
