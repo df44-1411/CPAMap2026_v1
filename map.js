@@ -484,60 +484,10 @@ Highcharts.mapChart('container', {
     series: [{
 
       name: 'cpa',
-      // ... dentro de series: [{ ...
-    
       tooltip: {
-        useHTML: true,
-        backgroundColor: 'transparent',
-        borderWidth: 0,
-        shadow: false,
-        padding: 0,
-        formatter: function() {
-            // MAPA DE CORES (Baseado no teu map.css)
-            const armyColors = {
-                "Club Penguin Armies": "#87d1ff", // CPA
-                "CPA Battleground": "#dd2100",    // CPAB
-                "Club Penguin Army Judges": "#ca2244", // CPAJ
-                "Water Vikings": "#000080",       // WV
-                "Army of Club Penguin": "#008000", // ACP
-                "Elite Guardians of Club Penguin": "grey", // EGCP
-                "Special Weapons and Tactics": "#00ff00", // SWAT
-                "Silver Empire": "#ffffff",       // SE
-                "People's Imperial Confederation": "#333399", // PIC
-                "Dark Pirates": "#800000",        // DP
-                "Templars": "#ffcc00",            // TCP
-                "Rebel Penguin Federation": "#000000", // RPF
-                "Winged Hussars": "#ff0000",      // WH
-                "Help Force": "#0000ff",          // HF
-                "Smart Penguins": "red",          // SP
-                "Warlords of Kosmos": "black",    // WOK
-                "Freeland": "#666666"             // Freeland
-            };
-
-            const point = this.point;
-            const armyName = point.controller;
-            // Pega a cor ou usa cinzento se não encontrar
-            const accentColor = armyColors[armyName] || '#666666'; 
-            
-            // Estilos CSS inline para injetar a cor correta
-            const borderStyle = `border-left: 5px solid ${accentColor};`;
-            const titleStyle = `color: ${accentColor}; text-shadow: 0 0 5px ${accentColor};`;
-
-            // O HTML DO CARTÃO
-            return `
-                <div class="map-tooltip-card" style="${borderStyle}">
-                    <div class="map-tooltip-header" style="${titleStyle}">
-                        ${point.name}
-                    </div>
-                    <div class="map-tooltip-info">
-                        <div><strong>Owner:</strong> ${armyName}</div>
-                        <div><strong>Type:</strong> ${point.type}</div>
-                        <div><strong>Region:</strong> ${point.continent}</div>
-                    </div>
-                </div>
-            `;
-        }
-    },
+        headerFormat: '',
+        pointFormat: '<b>Server:</b> {point.name}<br><b>Controller:</b> {point.controller}<br><b>Type:</b> {point.type}<br><b>Continent:</b> {point.continent}'
+      },
 
 
       dataLabels: {
