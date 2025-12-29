@@ -1,4 +1,5 @@
 import operator
+import re
 
 search_terms = {
     "Club Penguin Armies": "#87d1ff",
@@ -41,16 +42,21 @@ search_terms = {
 with open('map.js', 'r') as file:
     content = file.read()
 
-# 1. Calcular e Ordenar
+# 1. Calculate and Sort using Regex
+# This looks strictly for '"controller": "Army Name"' to avoid counting code logic.
 army_data = []
 for term, color in search_terms.items():
-    count = content.lower().count(term.lower()) - 1
+    # Regex pattern: "controller" followed by colon, whitespace, quote, Army Name, quote
+    # re.IGNORECASE ensures it captures variations in capitalization if they exist
+    pattern = r'"controller":\s*"' + re.escape(term) + r'"'
+    count = len(re.findall(pattern, content, re.IGNORECASE))
+    
     if count >= 1:
         army_data.append({ "name": term, "count": count, "color": color })
 
 army_data.sort(key=operator.itemgetter('count'), reverse=False)
 
-# 2. Gerar HTML com NO-CACHE META TAGS
+# 2. Generate HTML
 html_content = """
 <!DOCTYPE html>
 <html>
@@ -68,7 +74,7 @@ html_content = """
     ::-webkit-scrollbar-thumb:hover { background: #00f3ff; box-shadow: 0 0 10px #00f3ff; }
     html { scrollbar-width: thin; scrollbar-color: #1c3d5e rgba(0, 0, 0, 0.2); }
 
-    /* ESTILO GERAL */
+    /* GENERAL STYLE */
     body {
         background: transparent;
         font-family: 'Rajdhani', sans-serif;
@@ -130,6 +136,26 @@ for army in army_data:
     </div>
     '''
 
+html_content += """
+<script>
+    const cards = document.querySelectorAll('.army-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const name = card.querySelector('.army-name').innerText;
+            window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
+        });
+        card.addEventListener('mouseleave', () => {
+            window.parent.postMessage({ type: 'resetMap' }, '*');
+        });
+    });
+</script>
+</body>
+</html>
+"""
+
+with open("army_code.html", 'w') as file:
+    file.write(html_content)
+print("army_code.html updated. Logic fixed to exclude code comments/assignments.")
 html_content += """
 <script>
     const cards = document.querySelectorAll('.army-card');
