@@ -456,7 +456,7 @@ var mapData = [
 
 Highcharts.mapChart('container', {
     chart: {
-      height: 'fill',
+      height: 'auto',
       weight: 'auto',
       backgroundColor: 'transparent',
       type: 'line',
@@ -484,10 +484,51 @@ Highcharts.mapChart('container', {
     series: [{
 
       name: 'cpa',
-      tooltip: {
-        headerFormat: '',
-        pointFormat: '<b>Server:</b> {point.name}<br><b>Controller:</b> {point.controller}<br><b>Type:</b> {point.type}<br><b>Continent:</b> {point.continent}'
-      },
+          tooltip: {
+        useHTML: true,
+        backgroundColor: 'transparent',
+        borderWidth: 0,
+        shadow: false,
+        padding: 0,
+        followPointer: true, // O cartão segue o rato para não tapar o mapa
+        formatter: function() {
+            const point = this.point;
+            
+            // 1. LÓGICA INTELIGENTE DE COR
+            // O código vai ao elemento SVG do mapa e pergunta: "Qual é a tua cor agora?"
+            let accentColor = '#666666'; // Cor de recurso (cinzento)
+            
+            try {
+                if (point.graphic && point.graphic.element) {
+                    // Pega na cor 'fill' definida no teu map.css (.CPA { fill: ... })
+                    const style = window.getComputedStyle(point.graphic.element);
+                    if (style && style.fill) {
+                        accentColor = style.fill;
+                    }
+                }
+            } catch (e) { console.log("Erro a ler cor:", e); }
+
+            // 2. DADOS (Com proteção para não aparecer "undefined")
+            const armyName = point.controller || "Unknown Army";
+            const serverType = point.type || "Normal";
+            const continent = point.continent || "Unknown Region";
+
+            // 3. HTML DO CARTÃO (Usa a cor lida automaticamente)
+            return `
+                <div class="map-tooltip-card" style="border-left: 5px solid ${accentColor}">
+                    <div class="map-tooltip-header" style="color: ${accentColor}; text-shadow: 0 0 10px ${accentColor}">
+                        ${point.name}
+                    </div>
+                    <div class="map-tooltip-info">
+                        <div><strong>Owner:</strong> ${armyName}</div>
+                        <div><strong>Type:</strong> ${serverType}</div>
+                        <div><strong>Region:</strong> ${continent}</div>
+                    </div>
+                </div>
+            `;
+        }
+    },
+
 
 
       dataLabels: {
