@@ -215,3 +215,38 @@ body {
     justify-content: space-between;
     cursor: move; /* Se for arrastável */
 }
+
+/* --- Tooltip Personalizado do Mapa --- */
+.map-tooltip-card {
+    background: rgba(20, 30, 50, 0.95); /* Fundo muito escuro */
+    border: 1px solid rgba(0, 243, 255, 0.2); /* Borda subtil ciano */
+    padding: 10px 15px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.8); /* Sombra forte para destacar do mapa */
+    backdrop-filter: blur(5px);
+    font-family: 'Rajdhani', sans-serif;
+    color: #e0e6ed;
+    min-width: 180px;
+    z-index: 9999;
+}
+
+.map-tooltip-header {
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 3px;
+}
+
+.map-tooltip-info {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #94a3b8;
+}
+
+.map-tooltip-info strong {
+    color: #fff;
+    font-weight: 600;
+}
