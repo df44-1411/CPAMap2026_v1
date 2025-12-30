@@ -1,1 +1,93 @@
 
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #2ecc71; border-radius: 4px; border: 1px solid rgba(46, 204, 113, 0.2); }
+        ::-webkit-scrollbar-thumb:hover { background: #27ae60; box-shadow: 0 0 10px #27ae60; }
+        html { scrollbar-width: thin; scrollbar-color: #2ecc71 rgba(0, 0, 0, 0.2); }
+
+        /* GENERAL STYLE */
+        body {
+            background: transparent;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 5px 10px 5px 5px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .army-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(20, 30, 50, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left-width: 5px;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            cursor: default;
+        }
+
+        .army-card:hover {
+            transform: translateX(5px);
+            background: rgba(40, 50, 80, 0.95);
+            border-color: rgba(46, 204, 113, 0.5);
+        }
+
+        .army-name {
+            color: #e0e6ed;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .army-balance {
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+    </style>
+    </head>
+    <body>
+    
+        <div class="army-card" style="border-left-color: #043acf;">
+            <span class="army-name">Water Vikings</span>
+            <span class="army-balance">$10,000</span>
+        </div>
+        
+        <div class="army-card" style="border-left-color: #000dff;">
+            <span class="army-name">Help Force</span>
+            <span class="army-balance">$4,000</span>
+        </div>
+        
+        <div class="army-card" style="border-left-color: #f1c40f;">
+            <span class="army-name">Templars</span>
+            <span class="army-balance">$500</span>
+        </div>
+        
+        <div class="army-card" style="border-left-color: #2b8b1f;">
+            <span class="army-name">Army of Club Penguin</span>
+            <span class="army-balance">$20</span>
+        </div>
+        
+    </body>
+    </html>
+    
