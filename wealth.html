@@ -78,6 +78,11 @@
             <span class="army-balance">$6,000</span>
         </div>
         
+        <div class="army-card" style="border-left-color: #060505;">
+            <span class="army-name">Rebel Penguin Federation</span>
+            <span class="army-balance">$5,000</span>
+        </div>
+        
         <div class="army-card" style="border-left-color: #000dff;">
             <span class="army-name">Help Force</span>
             <span class="army-balance">$4,000</span>
@@ -93,6 +98,18 @@
             <span class="army-balance">$0</span>
         </div>
         
+    <script>
+        const cards = document.querySelectorAll('.army-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const name = card.querySelector('.army-name').innerText;
+                window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
+            });
+            card.addEventListener('mouseleave', () => {
+                window.parent.postMessage({ type: 'resetMap' }, '*');
+            });
+        });
+    </script>
     </body>
     </html>
     
