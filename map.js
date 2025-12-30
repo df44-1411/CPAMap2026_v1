@@ -564,6 +564,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Dillons Underground Mafias Army"){
+        point.graphic.addClass('DUMA');
+    }
     
     if (point.controller === "Club Penguin Armies") {
       point.graphic.addClass('CPA');
