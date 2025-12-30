@@ -606,9 +606,7 @@ function(chart) {
     if (point.controller === "Romans"){
     	point.graphic.addClass('ROMANS');
     }
-    if (point.controller === "Dillons Underground Mafias Army"){
-    	point.graphic.addClass('DUMA');
-    }
+    
     if (point.controller === "Seraphic Imperium"){
     	point.graphic.addClass('SI');
     }
