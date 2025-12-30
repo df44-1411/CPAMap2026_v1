@@ -10,5 +10,9 @@
   "Templars": {
     "balance": 500,
     "inventory": {}
+  },
+  "Army of Club Penguin": {
+    "balance": 100,
+    "inventory": {}
   }
 }
