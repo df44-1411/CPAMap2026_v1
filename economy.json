@@ -1,6 +1,8 @@
 {
   "Water Vikings": {
-    "balance": 10100,
-    "inventory": {}
+    "balance": 6100,
+    "inventory": {
+      "ship": 2
+    }
   }
 }
