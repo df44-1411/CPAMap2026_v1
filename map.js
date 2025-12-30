@@ -595,7 +595,7 @@ function(chart) {
     if (point.controller === "Shreks of CP"){
     	point.graphic.addClass('SHREKS');
     }
-    if (point.controller === "People's Imperial Confederation"){
+    if (point.controller === "Peoples Imperial Confederation"){
     	point.graphic.addClass('PIC');
     }
     if (point.controller === "wii phone"){
