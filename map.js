@@ -625,9 +625,7 @@ function(chart) {
     if (point.controller === "Tsunamis of Club Penguin"){
     	point.graphic.addClass('TSUNAMIS');
     }
-    if (point.controller === "Dark Pirates"){
-    	point.graphic.addClass('DP');
-    }
+    
     if (point.controller === "Templars"){
     	point.graphic.addClass('TCP');
     }
