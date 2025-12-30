@@ -35,7 +35,6 @@ search_terms = {
     "Dark Pirates": "#ff3333",
     "Winged Hussars": "#ff3333",
     "Smart Penguins": "#ff6666",
-    "Warlords of Kosmos": "#888888",
     "Freeland" : "#666666"
 }
 
