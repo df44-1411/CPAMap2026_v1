@@ -643,8 +643,6 @@ function(chart) {
      if (point.controller === "Smart Penguins"){
     	point.graphic.addClass('SP');
     }
-    if (point.controller === "Warlords of Kosmos"){
-    	point.graphic.addClass('WOK');
-    }
+    
   });
 });
