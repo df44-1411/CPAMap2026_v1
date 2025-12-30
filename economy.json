@@ -6,5 +6,9 @@
         "Abracadabra"
       ]
     }
+  },
+  "Templars": {
+    "balance": 500,
+    "inventory": {}
   }
 }
