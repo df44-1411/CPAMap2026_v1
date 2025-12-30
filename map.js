@@ -121,8 +121,8 @@ var mapData = [
     "name": "Chinook",
     "path": "M501,149L501,157L501,157L499,172L495,175C493,177,490,176,487,177,484,176,484,169,484,169L484,159L490,154C493,155,501,149,501,149Z",
     "continent": "Tundropa (Legacy)",
-    "type": "NORMAL",
-    "controller": "Freeland"
+    "type": "CAPITAL",
+    "controller": "Rebel Penguin Federation"
   },
   {
     "id": "id15",
