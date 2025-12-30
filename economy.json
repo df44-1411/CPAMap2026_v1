@@ -14,5 +14,9 @@
   "Army of Club Penguin": {
     "balance": 100,
     "inventory": {}
+  },
+  "Help Force": {
+    "balance": 4000,
+    "inventory": {}
   }
 }
