@@ -21,7 +21,7 @@ search_terms = {
     "Star Force": "#000050",
     "Dark Warriors": "#080808",
     "Shreks of CP": "#b0c400",
-    "People's Imperial Confederation": "#aa54ff",
+    "Peoples Imperial Confederation": "#aa54ff",
     "wii phone": "#ffffff",
     "Romans": "#730000",
     "Seraphic Imperium": "#c3ccd3",
