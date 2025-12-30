@@ -133,43 +133,59 @@
         </div>
 
         <aside class="sidebar">
-            
-            <div class="sidebar-tabs">
-                <button class="tab-btn active" onclick="openTab(event, 'forces')">Active Forces</button>
-                <button class="tab-btn" onclick="openTab(event, 'wealth')">Wealth</button>
-                <button class="tab-btn" onclick="openTab(event, 'war')">Wars</button>
-            </div>
-            
-            <div id="forces" class="tab-content active">
-                <div class="iframe-container">
-                    <iframe 
-                        id="armyFrame"
-                        frameborder="0" 
-                        style="width: 100%; height: 100%; display: block;"
-                        title="Army Codes">
-                    </iframe>
-                </div>
-            </div>
+    
+    <div class="sidebar-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'forces')">Active Forces</button>
+        <button class="tab-btn" onclick="openTab(event, 'wealth')">Wealth</button>
+        <button class="tab-btn" onclick="openTab(event, 'war')">Wars</button>
+    </div>
+    
+    <div id="forces" class="tab-content active">
+        <div class="iframe-container">
+            <iframe 
+                id="armyFrame"
+                frameborder="0" 
+                style="width: 100%; height: 100%; display: block;"
+                title="Army Codes">
+            </iframe>
+        </div>
+    </div>
 
-            <div id="wealth" class="tab-content">
-                <div class="empty-state">
-                    <h3>COMING SOON</h3>
-                    <p>Economic data offline.</p>
-                </div>
-            </div>
+    <div id="wealth" class="tab-content">
+        <div class="iframe-container">
+            <iframe 
+                id="wealthFrame"
+                frameborder="0" 
+                style="width: 100%; height: 100%; display: block;"
+                title="Wealth Leaderboard">
+            </iframe>
+        </div>
+    </div>
 
-            <div id="war" class="tab-content">
-                <div class="empty-state">
-                    <h3 style="color: #ff3333;">PEACEFUL TIMES</h3>
-                    <p>No active conflicts detected.</p>
-                </div>
-            </div>
-            
-            <script>
-                // Cache Busting para a aba principal
-                document.getElementById('armyFrame').src = "army_code.html?v=" + new Date().getTime();
-            </script>
-        </aside>
+    <div id="war" class="tab-content">
+        <div class="empty-state">
+            <h3 style="color: #ff3333;">PEACEFUL TIMES</h3>
+            <p>No active conflicts detected.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Calculate timestamp once
+        const timeStamp = new Date().getTime();
+
+        // Apply to Army Frame
+        const armyFrame = document.getElementById('armyFrame');
+        if (armyFrame) {
+            armyFrame.src = "army_code.html?v=" + timeStamp;
+        }
+
+        // Apply to Wealth Frame
+        const wealthFrame = document.getElementById('wealthFrame');
+        if (wealthFrame) {
+            wealthFrame.src = "wealth.html?v=" + timeStamp;
+        }
+    </script>
+</aside>
 
     </div>
 
