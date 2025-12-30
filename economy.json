@@ -18,5 +18,9 @@
   "Help Force": {
     "balance": 4000,
     "inventory": {}
+  },
+  "Kanye West Army": {
+    "balance": 1,
+    "inventory": {}
   }
 }
