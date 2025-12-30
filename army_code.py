@@ -25,7 +25,7 @@ search_terms = {
     "People's Imperial Confederation": "#aa54ff",
     "wii phone": "#ffffff",
     "Romans": "#730000",
-    "Dillon's Underground Mafias Army": "#ff0000",
+    "Dillons Underground Mafias Army": "#ff0000",
     "Seraphic Imperium": "#c3ccd3",
     "Void Troops": "#3d0eac",
     "Shadow Legionaries": "#2d0b7d",
