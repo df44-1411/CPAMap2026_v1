@@ -32,7 +32,6 @@ search_terms = {
     "Kanye West Army": "#853082",
     "Tsunamis of Club Penguin": "#0099cc",
     "Silver Empire": "#ffffff",
-    "Dark Pirates": "#ff3333",
     "Winged Hussars": "#ff3333",
     "Smart Penguins": "#ff6666",
     "Freeland" : "#666666"
