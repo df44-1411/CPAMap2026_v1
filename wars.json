@@ -1,0 +1,15 @@
+{
+  "Golden Seas War": {
+    "name": "Golden Seas War",
+    "date": "Jan 3rd",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Water Vikings"
+    ],
+    "side_b": [
+      "Templars"
+    ],
+    "ending_date": null,
+    "winner": null
+  }
+}
