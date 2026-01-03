@@ -1,1 +1,171 @@
 
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* SCROLLBAR & BODY */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+        ::-webkit-scrollbar-thumb { background: #ff3333; border-radius: 4px; }
+        html { scrollbar-width: thin; scrollbar-color: #ff3333 rgba(0, 0, 0, 0.2); }
+        
+        body {
+            background: transparent;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 5px;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* EMPTY STATE */
+        .empty-state {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            border: 1px dashed #444;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* WAR CARD */
+        .war-card {
+            background: rgba(20, 20, 25, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .war-header {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            letter-spacing: 1px;
+        }
+
+        .conflict-zone {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .side-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .vs-col {
+            width: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            color: #ff3333;
+            text-shadow: 0 0 5px red;
+        }
+
+        /* MINI ARMY CARDS */
+        .army-card-mini {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(40, 40, 50, 0.6);
+            border-left: 3px solid #555;
+            padding: 4px 8px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .army-card-mini:hover {
+            background: rgba(60, 60, 70, 0.9);
+            transform: translateX(2px);
+        }
+
+        /* METADATA FOOTER */
+        .war-footer {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.3);
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            box-shadow: 0 0 5px currentColor;
+        }
+    </style>
+    </head>
+    <body>
+    
+            <div class="war-card">
+                <div class="war-header">Golden Seas War</div>
+                
+                <div class="conflict-zone">
+                    <div class="side-col" style="align-items: flex-start;">
+                        <span style="font-size:0.7rem; color:#888;">SIDE A</span>
+                        
+    <div class="army-card-mini" style="border-left-color: #043acf;">
+        <span class="army-name">Water Vikings</span>
+        <span class="army-count"></span>
+    </div>
+    
+                    </div>
+                    
+                    <div class="vs-col">VS</div>
+                    
+                    <div class="side-col" style="align-items: flex-end;">
+                        <span style="font-size:0.7rem; color:#888;">SIDE B</span>
+                        
+    <div class="army-card-mini" style="border-left-color: #f1c40f;">
+        <span class="army-name">Templars</span>
+        <span class="army-count"></span>
+    </div>
+    
+                    </div>
+                </div>
+
+                <div class="war-footer">
+                    <span>
+                        <span class="status-dot" style="background-color: #ffaa00; color: #ffaa00;"></span>
+                        Declaration Issued
+                    </span>
+                    <span>Declared: Jan 3rd</span>
+                </div>
+            </div>
+            
+    <script>
+        const cards = document.querySelectorAll('.army-card-mini');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const name = card.querySelector('.army-name').innerText;
+                window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
+            });
+            card.addEventListener('mouseleave', () => {
+                window.parent.postMessage({ type: 'resetMap' }, '*');
+            });
+        });
+    </script>
+    </body>
+    </html>
+    
