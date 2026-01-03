@@ -5,7 +5,6 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* SCROLLBAR & BODY */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
         ::-webkit-scrollbar-thumb { background: #ff3333; border-radius: 4px; }
@@ -20,7 +19,6 @@
             overflow-x: hidden;
         }
 
-        /* EMPTY STATE */
         .empty-state {
             text-align: center;
             padding: 20px;
@@ -30,7 +28,7 @@
             margin-top: 20px;
         }
 
-        /* WAR CARD */
+        /* WAR CARD BASE */
         .war-card {
             background: rgba(20, 20, 25, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -40,54 +38,82 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* ANIMATION FOR DECLARATION ISSUED */
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 5px rgba(255, 170, 0, 0.2); border-color: rgba(255, 170, 0, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(255, 170, 0, 0.6); border-color: rgba(255, 170, 0, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(255, 170, 0, 0.2); border-color: rgba(255, 170, 0, 0.3); }
+        }
+
+        .war-card.declaration {
+            animation: pulse-orange 2s infinite;
+            border-left: 4px solid #ffaa00;
         }
 
         .war-header {
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             padding-bottom: 5px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .conflict-zone {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align top to handle different list sizes */
             justify-content: space-between;
+            margin-bottom: 10px;
         }
 
         .side-col {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
 
         .vs-col {
-            width: 30px;
+            width: 40px;
             text-align: center;
             font-weight: bold;
             font-style: italic;
             color: #ff3333;
             text-shadow: 0 0 5px red;
+            margin-top: 10px; /* Adjust vertical center visually */
+            font-size: 1.1rem;
         }
 
-        /* MINI ARMY CARDS */
+        /* FIXED SIZE ARMY CARDS */
         .army-card-mini {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(40, 40, 50, 0.6);
             border-left: 3px solid #555;
-            padding: 4px 8px;
+            padding: 5px 8px;
             border-radius: 2px;
             font-size: 0.85rem;
             cursor: pointer;
             transition: 0.2s;
+            width: 140px; /* Fixed width as requested */
+            box-sizing: border-box;
+            white-space: nowrap;
+            overflow: hidden;
         }
+        
+        .army-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-right: 5px;
+        }
+
         .army-card-mini:hover {
             background: rgba(60, 60, 70, 0.9);
             transform: translateX(2px);
@@ -95,15 +121,21 @@
 
         /* METADATA FOOTER */
         .war-footer {
-            margin-top: 10px;
-            font-size: 0.75rem;
+            margin-top: 12px;
+            font-size: 0.8rem;
             color: #ccc;
+            background: rgba(0,0,0,0.3);
+            padding: 8px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column; /* Allow multiple lines */
+            gap: 4px;
+        }
+        
+        .footer-row {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            background: rgba(0,0,0,0.3);
-            padding: 4px;
-            border-radius: 4px;
+            width: 100%;
         }
 
         .status-dot {
@@ -111,18 +143,61 @@
             width: 8px;
             border-radius: 50%;
             display: inline-block;
-            margin-right: 5px;
+            margin-right: 6px;
             box-shadow: 0 0 5px currentColor;
         }
     </style>
     </head>
     <body>
     
-        <div class="empty-state">
-            <h3 style="color: #ff3333;">PEACEFUL TIMES</h3>
-            <p>No active conflicts detected.</p>
-        </div>
-        
+            <div class="war-card declaration">
+                <div class="war-header">Golden Seas War</div>
+                
+                <div class="conflict-zone">
+                    <div class="side-col" style="align-items: flex-start;">
+                        <span style="font-size:0.7rem; color:#888; margin-bottom:2px;">SIDE A</span>
+                        
+    <div class="army-card-mini" style="border-left-color: #043acf;">
+        <span class="army-name">Water Vikings</span>
+        <span class="army-count"></span>
+    </div>
+    
+    <div class="army-card-mini" style="border-left-color: #ff6666;">
+        <span class="army-name">Smart Penguins</span>
+        <span class="army-count"></span>
+    </div>
+    
+                    </div>
+                    
+                    <div class="vs-col">VS</div>
+                    
+                    <div class="side-col" style="align-items: flex-end;">
+                        <span style="font-size:0.7rem; color:#888; margin-bottom:2px;">SIDE B</span>
+                        
+    <div class="army-card-mini" style="border-left-color: #f1c40f;">
+        <span class="army-name">Templars</span>
+        <span class="army-count"></span>
+    </div>
+    
+    <div class="army-card-mini" style="border-left-color: #730000;">
+        <span class="army-name">Romans</span>
+        <span class="army-count"></span>
+    </div>
+    
+                    </div>
+                </div>
+
+                <div class="war-footer">
+                    
+            <div class="footer-row">
+                <span><span class="status-dot" style="background-color: #ffaa00; color: #ffaa00;"></span>Declaration Issued</span>
+                <span>Declared: Jan 3</span>
+            </div>
+            
+                    
+                </div>
+            </div>
+            
     <script>
         const cards = document.querySelectorAll('.army-card-mini');
         cards.forEach(card => {
