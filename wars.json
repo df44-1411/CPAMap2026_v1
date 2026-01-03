@@ -1,17 +1,4 @@
 {
-  "Golden Seas War": {
-    "name": "Golden Seas War",
-    "date": "Jan 3rd",
-    "status": "Ended",
-    "side_a": [
-      "Water Vikings"
-    ],
-    "side_b": [
-      "Templars"
-    ],
-    "ending_date": "Jan 10th",
-    "winner": "Water Vikings"
-  },
   "Golden NONIntelligence War": {
     "name": "Golden NONIntelligence War",
     "date": "Jan 3",
