@@ -12,12 +12,13 @@
     <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/map.css">
 
     <style>
         /* --- 1. GENERAL CP UI STYLING --- */
         :root {
             --cp-blue: #0096ff;
-            --cp-dark: #004080;
+            --cp-dark-blue: #005090;
             --cp-stroke: #002244;
         }
 
@@ -30,50 +31,46 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            /* Subtle scanline texture */
-            background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
             background-size: 100% 3px;
         }
 
-        /* The Main Blue Box */
         .cp-interface {
             width: 1000px;
-            height: 650px;
-            background: #005f9e; /* Base darker blue */
+            height: 680px;
+            background: #005f9e; 
             border: 8px solid #003355;
-            border-radius: 12px;
+            border-radius: 14px;
             box-shadow: 
                 inset 0 0 40px rgba(0,0,0,0.6), 
                 0 10px 25px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative; /* For absolute positioning of the note */
+            position: relative;
         }
 
         .header-title {
-            font-size: 48px;
+            font-size: 52px;
             color: white;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-top: 15px;
-            -webkit-text-stroke: 2px var(--cp-stroke);
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+            -webkit-text-stroke: 2px var(--cp-stroke); 
+            text-shadow: 4px 4px 0px rgba(0,0,0,0.3);
             z-index: 10;
         }
 
         /* --- 2. THE MAP CONTAINER --- */
         .map-viewport {
-            width: 85%;
-            height: 65%;
+            width: 90%;
+            height: 60%;
             margin-top: 10px;
-            border: 4px solid #004488;
+            border: 5px solid #004488;
             border-radius: 20px;
             position: relative;
-            box-shadow: inset 0 0 20px #000;
+            box-shadow: inset 0 0 25px #000;
             overflow: hidden;
-            
-            /* Dark Grid Background */
             background-color: #001529; 
             background-image: 
                 linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
@@ -88,126 +85,113 @@
         }
 
         /* --- 3. FOOTER LEGEND --- */
-        .footer-bar {
-            width: 85%;
-            margin-top: 25px;
+        .footer-image-container {
+            width: 90%;
+            margin-top: 20px;
             display: flex;
-            justify-content: space-between;
-            color: white;
-            font-size: 20px;
-            text-shadow: 2px 2px 0 #000;
+            justify-content: center;
+            align-items: center;
         }
-        .legend-item { display: flex; align-items: center; gap: 10px; }
-
-        .icon-smile {
-            width: 24px; height: 24px; background: #ffcc00; border-radius: 50%; border: 2px solid #cc9900;
-            position: relative;
-        }
-        .icon-smile::before {
-            content:''; position: absolute; bottom: 6px; left: 5px; width: 10px; height: 5px;
-            border-bottom: 2px solid #553300; border-radius: 0 0 10px 10px;
-        }
-        
-        .icon-signal {
-            width: 10px; height: 20px; background: #39ff14; box-shadow: 0 0 5px #39ff14;
+        .footer-image-container img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
 
-        /* --- 4. CUSTOM TOOLTIP (Card Style) --- */
+        /* --- 4. CUSTOM TOOLTIP --- */
         .custom-tooltip-card {
-            background: linear-gradient(180deg, rgba(20,40,60,0.95), rgba(10,20,30,0.98));
-            border: 1px solid #00ccff;
-            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(0, 50, 90, 0.95), rgba(0, 30, 60, 0.98));
+            border: 2px solid #00ccff;
+            border-radius: 12px;
             padding: 15px;
-            width: 220px;
-            box-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
+            width: 240px;
+            box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
             font-family: 'Verdana', sans-serif;
             text-align: left;
             pointer-events: none;
-            color: #ccc;
+            color: #eee;
             z-index: 9999;
         }
 
         .card-header {
             color: #00ccff;
             font-family: 'Bangers', cursive;
-            font-size: 26px;
+            font-size: 28px;
             text-transform: uppercase;
-            border-bottom: 1px solid #005577;
+            border-bottom: 2px solid #005577;
             padding-bottom: 5px;
             margin-bottom: 10px;
-            text-shadow: 0 0 5px #00ccff;
+            text-shadow: 0 0 8px #00ccff;
         }
 
         .card-row {
-            font-size: 12px;
-            margin-bottom: 6px;
+            font-size: 13px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
-        .card-row strong { color: #ffffff; }
+        .card-row strong { color: #ffffff; text-shadow: 1px 1px 0 #000; }
 
-        /* Penguin Amount Bar */
-        .penguin-meter {
-            height: 6px;
-            width: 100px;
-            background: #333;
-            border-radius: 3px;
-            overflow: hidden;
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 5px;
+        /* Signal Bar */
+        .signal-bar-container {
+            display: flex;
+            gap: 4px;
+            background: #003366;
+            padding: 4px 8px;
+            border-radius: 10px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
         }
-        .penguin-fill {
-            height: 100%;
-            background: #39ff14; 
-            box-shadow: 0 0 5px #39ff14;
+        .signal-segment {
+            width: 12px; height: 20px;
+            background: #002244; 
+            border-radius: 2px;
+            transform: skewX(-10deg);
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
+        }
+        .signal-segment.active {
+            background: #39ff14; box-shadow: 0 0 6px #39ff14, inset 0 0 2px #fff;
         }
 
-        /* --- 5. STICKY NOTE (Top Right) --- */
+        /* --- 5. STICKY NOTE --- */
         .sticky-note {
             position: absolute;
-            top: 25px;
-            right: 25px;
-            width: 160px;
-            background: #fff8a0; /* Post-it Yellow */
+            top: 30px; right: 30px;
+            width: 170px;
+            background: #fffca5;
             padding: 12px;
             font-family: 'Comic Sans MS', cursive;
-            font-size: 13px;
-            color: #222;
-            box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
-            transform: rotate(2deg);
+            font-size: 14px;
+            color: #333;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+            transform: rotate(3deg);
             text-align: center;
             z-index: 100;
-            border: 1px solid #e0d080;
+            border: 1px solid #dcdaa0;
         }
         .pin {
-            width: 12px; height: 12px; background: #d00; border-radius: 50%;
-            position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+            width: 14px; height: 14px; background: #e60000; border-radius: 50%;
+            position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
             box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        .sticky-note a { color: #0044cc; text-decoration: underline; font-weight: bold; }
+        .sticky-note a { color: #0055aa; text-decoration: underline; font-weight: bold; cursor: pointer; }
 
         /* --- 6. HIGHCHARTS OVERRIDES --- */
-        /* Use CSS to ensure outlines are thick and white */
         .highcharts-point {
             stroke: #ffffff !important;
             stroke-width: 1.5px !important;
             stroke-opacity: 0.9 !important;
         }
-        /* Hover effect */
         .highcharts-point:hover {
             stroke: #00ccff !important;
-            stroke-width: 3px !important;
-            filter: drop-shadow(0 0 8px #00ccff);
+            stroke-width: 4px !important;
+            filter: drop-shadow(0 0 10px #00ccff);
         }
-        /* Labels: White, Uppercase, Bangers Font */
+        
+        /* NOTE: Data label styling is also handled in the JS below to enforce visibility */
         .highcharts-data-label text {
-            font-family: 'Bangers', cursive !important;
-            font-size: 14px !important;
             fill: #ffffff !important;
             text-shadow: 2px 2px 0px #000000 !important;
-            text-transform: uppercase;
-            font-weight: normal !important;
         }
     </style>
 </head>
@@ -220,17 +204,15 @@
             <div class="pin"></div>
             <strong>NOTICE:</strong><br>
             Map View Active.<br>
-            <a href="#" onclick="alert('Redirecting...')">Use Server List Instead</a>
+            <a href="#" onclick="alert('Redirecting to Server List...')">Use Server List Instead</a>
         </div>
 
         <div class="map-viewport">
             <div id="container"></div>
         </div>
 
-        <div class="footer-bar">
-            <div class="legend-item"><div class="icon-smile"></div> Buddies Online</div>
-            <div class="legend-item"><div class="icon-signal"></div> Amount of Penguins</div>
-            <div class="legend-item" style="font-size: 16px;">Ultimate Safe Chat</div>
+        <div class="footer-image-container">
+            <img src="https://cdn.discordapp.com/attachments/960890788093505556/1457516501350351082/image.png?ex=695c4985&is=695af805&hm=7bfc130c606badee130f55a12047c7bb92e701da631a75749dbe407f2761e634&" alt="Penguin Status Legend">
         </div>
     </div>
 
@@ -238,49 +220,50 @@
         (function(H) {
             H.wrap(H.Chart.prototype, 'init', function (proceed, userOptions, cb) {
                 
-                // 1. Chart Global Settings
                 userOptions.chart = userOptions.chart || {};
-                userOptions.chart.backgroundColor = 'transparent'; // Let the grid show
+                userOptions.chart.backgroundColor = 'transparent';
                 
-                // Disable all movement
+                // Disable Zoom/Pan
                 userOptions.chart.panning = { enabled: false };
                 userOptions.chart.pinchType = '';
                 userOptions.chart.zoomType = '';
                 userOptions.mapNavigation = { enabled: false };
                 userOptions.credits = { enabled: false };
 
-                // 2. Series & Map Settings
-                // We do NOT set fillColor here so your map.js colors persist.
-                // We ONLY enforce the outlines and labels.
+                // Map Plot Options
                 userOptions.plotOptions = userOptions.plotOptions || {};
                 userOptions.plotOptions.map = {
-                    borderColor: '#FFFFFF', // Force white borders
-                    borderWidth: 1.5,
                     nullColor: 'transparent',
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1.5,
                     states: {
                         hover: {
-                            color: undefined, // Don't override color on hover
+                            color: undefined,
                             borderColor: '#00ccff',
                             borderWidth: 3
                         }
                     }
                 };
 
-                // Enforce font styles on data labels
+                // --- KEY CHANGE: FORCE ALL LABELS VISIBLE ---
                 if(userOptions.plotOptions.series) {
                     userOptions.plotOptions.series.dataLabels = {
                         enabled: true,
+                        allowOverlap: true,     // Force labels to print even if they overlap
+                        crop: false,            // Do not hide labels at the edges
+                        overflow: 'allow',      // Allow labels to spill outside the plot area
                         style: {
                             textOutline: '3px #000000',
                             color: '#FFFFFF',
-                            fontSize: '14px',
+                            fontSize: '13px',   // Fixed size for consistency
                             fontFamily: "'Bangers', cursive",
-                            textTransform: 'uppercase'
+                            textTransform: 'uppercase',
+                            fontWeight: 'normal'
                         }
                     };
                 }
 
-                // 3. Custom Card Tooltip
+                // Custom Tooltip
                 userOptions.tooltip = {
                     useHTML: true,
                     backgroundColor: 'transparent',
@@ -289,31 +272,31 @@
                     padding: 0,
                     followPointer: true,
                     formatter: function () {
-                        // Mock data for the "Penguins" bar
-                        const fakeCount = Math.floor(Math.random() * 500) + 50;
-                        const fillPercent = Math.min((fakeCount / 600) * 100, 100);
+                        const name = this.key || this.point.name || "Unknown";
+                        const props = this.point.properties || {};
+                        const owner = this.point.owner || props.owner || "Unclaimed";
+                        const type = this.point.type || props.type || "Normal";
+                        const continent = this.point.continent || props.continent || "Unknown";
 
-                        // Safe access to your map data properties
-                        const owner = this.point.owner || "Unclaimed";
-                        const type = this.point.type || "Normal";
-                        const continent = this.point.continent || "Unknown";
+                        // Mock Population Bar
+                        const fakePop = Math.floor(Math.random() * 5) + 1; 
+                        let barsHtml = '';
+                        for(let i = 1; i <= 5; i++) {
+                            const activeClass = i <= fakePop ? 'active' : '';
+                            barsHtml += `<div class="signal-segment ${activeClass}"></div>`;
+                        }
 
                         return `
                         <div class="custom-tooltip-card">
-                            <div class="card-header">${this.key}</div>
+                            <div class="card-header">${name}</div>
                             <div class="card-body">
                                 <div class="card-row"><span>Owner:</span> <strong>${owner}</strong></div>
                                 <div class="card-row"><span>Type:</span> <strong>${type}</strong></div>
                                 <div class="card-row"><span>Continent:</span> <strong>${continent}</strong></div>
-                                <div style="margin-top:10px; border-top:1px solid #334455; padding-top:5px;">
+                                <div style="margin-top:12px; border-top:1px solid #004466; padding-top:8px;">
                                     <div class="card-row">
-                                        <span>Penguins Online:</span>
-                                        <div>
-                                            <strong>${fakeCount}</strong>
-                                            <div class="penguin-meter">
-                                                <div class="penguin-fill" style="width:${fillPercent}%"></div>
-                                            </div>
-                                        </div>
+                                        <span>Population:</span>
+                                        <div class="signal-bar-container">${barsHtml}</div>
                                     </div>
                                 </div>
                             </div>
