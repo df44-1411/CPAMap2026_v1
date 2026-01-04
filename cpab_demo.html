@@ -5,221 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Army Map Servers</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
     <script src="https://code.highcharts.com/maps/highmaps.js"></script>
     <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
     <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/map.css">
-
     <style>
-        /* --- CORE CP STYLING --- */
+        /* --- 1. GENERAL CP UI STYLING --- */
         :root {
-            --cp-blue-bg: #0096ff;
-            --cp-dark-blue: #005695;
-            --cp-darker-blue: #003e70;
-            --cp-text-stroke: #002b4d;
+            --cp-blue: #0096ff;
+            --cp-dark: #004080;
+            --cp-stroke: #002244;
+            --cp-card-bg: rgba(10, 25, 40, 0.95); /* Dark card background */
+            --cp-card-border: #00aaff;
         }
 
         body {
-            background-color: var(--cp-blue-bg);
+            background-color: var(--cp-blue);
+            font-family: 'Bangers', cursive;
             margin: 0;
-            padding: 0;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Luckiest Guy', cursive; /* The CP-style font */
             overflow: hidden;
-            user-select: none;
+            /* Scanline effect for slight retro feel */
+            background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 100% 3px;
         }
 
-        /* The Main Game Box Container */
+        /* The Main Blue Box */
         .cp-interface {
-            width: 960px;
-            height: 600px;
-            background: linear-gradient(to bottom, #005f9e, #00467f);
+            width: 1000px;
+            height: 650px;
+            background: #005f9e; /* Base darker blue */
             border: 8px solid #003355;
-            border-radius: 10px;
-            box-shadow: 0 0 0 5px #0080dd, 0 10px 20px rgba(0,0,0,0.5);
-            position: relative;
+            border-radius: 12px;
+            box-shadow: 
+                inset 0 0 40px rgba(0,0,0,0.6), /* Inner shadow depth */
+                0 10px 25px rgba(0,0,0,0.5); /* Outer shadow */
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
-        /* Header Text */
         .header-title {
-            font-size: 42px;
-            color: #ffffff;
+            font-size: 48px;
+            color: white;
             text-transform: uppercase;
-            margin-top: 20px;
-            letter-spacing: 2px;
-            /* The classic white text with thick dark outline look */
-            text-shadow: 
-                -3px -3px 0 var(--cp-text-stroke),  
-                 3px -3px 0 var(--cp-text-stroke),
-                -3px  3px 0 var(--cp-text-stroke),
-                 3px  3px 0 var(--cp-text-stroke);
+            letter-spacing: 3px;
+            margin-top: 15px;
+            /* Iconic thick stroke style */
+            -webkit-text-stroke: 2px var(--cp-stroke);
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.4);
             z-index: 10;
         }
 
-        /* The Blue Rounded Box where the servers (now map) live */
-        .server-list-area {
-            width: 80%;
+        /* --- 2. THE MAP CONTAINER (Dark Grid Style) --- */
+        .map-viewport {
+            width: 85%;
             height: 65%;
-            background: rgba(0, 40, 80, 0.4);
-            border: 3px solid #006eb3;
-            border-radius: 30px;
             margin-top: 10px;
+            border: 4px solid #004488;
+            border-radius: 20px;
             position: relative;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-            overflow: hidden; /* Keeps map inside the rounded corners */
+            box-shadow: inset 0 0 20px #000;
+            overflow: hidden;
+            
+            /* The "EPF" style Grid Background */
+            background-color: #001529; /* Very dark blue */
+            background-image: 
+                linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 150, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px; /* Grid square size */
         }
 
-        /* Force the Highcharts container to fill the "Server List" box */
         #container {
             width: 100%;
             height: 100%;
             background: transparent !important;
         }
-        
-        /* Highcharts overrides to blend with the CP Blue Theme */
-        .highcharts-background {
-            fill: transparent !important;
-        }
-        .highcharts-container {
-            font-family: 'Luckiest Guy', cursive !important;
-        }
 
-        /* --- UI ELEMENTS (Scroll Buttons mimicking functionality) --- */
+        /* --- 3. UI CONTROLS --- */
+        /* Scroll Buttons */
         .scroll-btn {
             position: absolute;
-            right: 40px;
-            width: 40px;
-            height: 40px;
-            background: radial-gradient(circle, #00aaff, #005599);
-            border: 3px solid #ffffff;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(180deg, #00aaff, #0066cc);
+            border: 3px solid white;
             border-radius: 50%;
-            box-shadow: 0 4px 0 #003366, 0 5px 10px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 0 #003366, 0 5px 10px rgba(0,0,0,0.3);
             cursor: pointer;
             display: flex;
-            align-items: center;
             justify-content: center;
-            transition: transform 0.1s;
+            align-items: center;
+            transition: 0.1s;
         }
-        .scroll-btn:active {
-            transform: translateY(4px);
-            box-shadow: none;
-        }
-        .scroll-btn::after {
-            content: '';
-            border: solid white;
-            border-width: 0 4px 4px 0;
-            padding: 5px;
-            display: inline-block;
-        }
-        .btn-up { top: 120px; }
-        .btn-up::after { transform: rotate(-135deg) translateY(-2px); }
+        .scroll-btn:active { transform: translateY(4px); box-shadow: none; }
         
-        .btn-down { bottom: 120px; }
-        .btn-down::after { transform: rotate(45deg) translateY(-2px); }
+        /* Arrows inside buttons */
+        .scroll-btn::after {
+            content: ''; border: solid white; border-width: 0 5px 5px 0;
+            padding: 6px; display: inline-block;
+        }
+        .btn-up { top: 150px; }
+        .btn-up::after { transform: rotate(-135deg) translate(-2px, -2px); }
+        .btn-down { bottom: 150px; }
+        .btn-down::after { transform: rotate(45deg) translate(-2px, -2px); }
 
-        /* --- FOOTER LEGEND --- */
-        .footer-legend {
+        /* Footer Legend */
+        .footer-bar {
+            width: 85%;
+            margin-top: 25px;
             display: flex;
             justify-content: space-between;
-            width: 80%;
-            margin-top: 25px;
             color: white;
-            font-size: 16px;
-            text-shadow: 1px 1px 2px black;
+            font-size: 20px;
+            text-shadow: 2px 2px 0 #000;
         }
+        .legend-item { display: flex; align-items: center; gap: 10px; }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Mimicking the icons with CSS shapes/emoji for simplicity */
-        .icon-buddy {
-            width: 20px; height: 20px;
-            background: #ffcc00;
-            border-radius: 50%;
-            border: 2px solid #b38f00;
+        /* Icon graphics (CSS Only) */
+        .icon-smile {
+            width: 24px; height: 24px; background: #ffcc00; border-radius: 50%; border: 2px solid #cc9900;
             position: relative;
         }
-        .icon-buddy::before { /* Smile */
-            content: ''; position: absolute; top: 12px; left: 4px; width: 10px; height: 4px;
-            border-bottom: 2px solid #554400; border-radius: 50%;
+        .icon-smile::before { /* Smile arc */
+            content:''; position: absolute; bottom: 6px; left: 5px; width: 10px; height: 5px;
+            border-bottom: 2px solid #553300; border-radius: 0 0 10px 10px;
         }
         
-        .icon-bar {
-            width: 8px; height: 16px; background: #00ff00;
-            box-shadow: 2px 0 0 #004400;
+        .icon-signal {
+            width: 10px; height: 20px; background: #39ff14; box-shadow: 0 0 5px #39ff14;
         }
 
-        .icon-chat {
-            width: 22px; height: 18px;
-            background: white; border-radius: 4px;
+        /* --- 4. CUSTOM TOOLTIP (Card Style) --- */
+        /* This replaces the default Highcharts tooltip with your image reference style */
+        .custom-tooltip-card {
+            background: linear-gradient(180deg, rgba(20,40,60,0.95), rgba(10,20,30,0.98));
+            border: 1px solid #00ccff;
+            border-radius: 8px;
+            padding: 15px;
+            width: 220px;
+            box-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
+            font-family: 'Verdana', sans-serif; /* Clean readable font for details */
+            text-align: left;
+            pointer-events: none;
+            color: #ccc;
         }
 
-        /* --- THE STICKY NOTE --- */
+        .card-header {
+            color: #00ccff; /* Neon Blue Title */
+            font-family: 'Bangers', cursive;
+            font-size: 26px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #005577;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #00ccff;
+        }
+
+        .card-row {
+            font-size: 12px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card-row strong { color: #ffffff; }
+
+        /* The "Penguin Amount" Bar */
+        .penguin-meter {
+            height: 6px;
+            width: 100px;
+            background: #333;
+            border-radius: 3px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .penguin-fill {
+            height: 100%;
+            background: #39ff14; /* Green signal color */
+            box-shadow: 0 0 5px #39ff14;
+        }
+
+        /* --- 5. STICKY NOTE (Moved) --- */
         .sticky-note {
             position: absolute;
-            bottom: 40px;
-            right: -20px;
+            bottom: 20px;
+            right: -60px; /* Moved slightly out */
             width: 180px;
-            background: #fffca5; /* Post-it yellow */
-            padding: 15px;
-            font-family: 'Comic Sans MS', sans-serif;
-            color: #333;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            transform: rotate(-5deg);
-            z-index: 100;
-            text-align: center;
+            background: #fff8a0;
+            padding: 10px;
+            font-family: 'Comic Sans MS', cursive; /* Handwritten look */
             font-size: 14px;
-            cursor: pointer;
-            transition: transform 0.2s;
+            color: #222;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.3);
+            transform: rotate(-3deg);
+            text-align: center;
+            z-index: 100;
         }
-        .sticky-note:hover {
-            transform: rotate(-2deg) scale(1.05);
-        }
-        .pin {
-            width: 12px; height: 12px;
-            background: #d00;
-            border-radius: 50%;
-            box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
-        }
-        .sticky-title {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #000;
+        .tape {
+            width: 40px; height: 15px; background: rgba(255,255,255,0.4);
+            position: absolute; top: -5px; left: 35%;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
         }
 
-        /* --- TOOLTIP OVERRIDE --- 
-           Making the map hover effects look like Server List Bars! */
-        .highcharts-tooltip-box {
-            fill: #0066cc !important; /* Server Bar Blue */
-            fill-opacity: 1 !important;
+        /* --- 6. HIGHCHARTS OVERRIDES --- */
+        /* Make the outlines thicker/brighter */
+        .highcharts-point {
             stroke: #ffffff !important;
-            stroke-width: 2px !important;
-            border-radius: 10px !important;
+            stroke-width: 1.5px !important;
+            stroke-opacity: 0.8 !important;
         }
-        
-        .highcharts-tooltip text {
+        /* Hover state for territories */
+        .highcharts-point:hover {
+            stroke: #00ccff !important;
+            stroke-width: 3px !important;
+            fill-opacity: 1 !important;
+            filter: drop-shadow(0 0 5px #00ccff);
+        }
+        /* Make labels use the Action Man font */
+        .highcharts-data-label text {
+            font-family: 'Bangers', cursive !important;
+            font-size: 14px !important;
             fill: #ffffff !important;
-            font-family: 'Luckiest Guy', cursive !important;
-            font-size: 16px !important;
-            text-shadow: 1px 1px 0 #003366;
+            text-shadow: 2px 2px 0px #000000 !important;
+            text-transform: uppercase;
+            font-weight: normal !important;
         }
-
     </style>
 </head>
 <body>
@@ -227,35 +247,114 @@
     <div class="cp-interface">
         <div class="header-title">Army Map Servers</div>
 
-        <div class="server-list-area">
+        <div class="map-viewport">
             <div id="container"></div>
         </div>
 
-        <div class="scroll-btn btn-up" onclick="alert('Scroll Up / Zoom In')"></div>
-        <div class="scroll-btn btn-down" onclick="alert('Scroll Down / Zoom Out')"></div>
+        <div class="scroll-btn btn-up" onclick="alert('Scroll Up')"></div>
+        <div class="scroll-btn btn-down" onclick="alert('Scroll Down')"></div>
+
+        <div class="footer-bar">
+            <div class="legend-item"><div class="icon-smile"></div> Buddies Online</div>
+            <div class="legend-item"><div class="icon-signal"></div> Amount of Penguins</div>
+            <div class="legend-item" style="font-size: 16px;">Ultimate Safe Chat</div>
+        </div>
 
         <div class="sticky-note">
-            <div class="pin"></div>
-            <span class="sticky-title">Notice:</span>
-            Map View Active<br>
-            <a href="#" style="color:blue; text-decoration:underline; font-size:12px;">Use Server List Instead</a>
-        </div>
-
-        <div class="footer-legend">
-            <div class="legend-item">
-                <div class="icon-buddy"></div>
-                <span>Buddies online</span>
-            </div>
-            <div class="legend-item">
-                <div class="icon-bar"></div>
-                <span>Amount of penguins online</span>
-            </div>
-            <div class="legend-item">
-                <div class="icon-chat"></div>
-                <span>Ultimate safe chat</span>
-            </div>
+            <div class="tape"></div>
+            <strong>NOTICE:</strong><br>
+            Use the Server List for legacy view.<br>
+            <a href="#" style="color:blue">Click Here</a>
         </div>
     </div>
+
+    <script>
+        (function(H) {
+            H.wrap(H.Chart.prototype, 'init', function (proceed, userOptions, cb) {
+                
+                // 1. Force styling overrides
+                userOptions.chart = userOptions.chart || {};
+                userOptions.chart.backgroundColor = 'transparent'; // Transparent for Grid
+                userOptions.chart.panning = { enabled: false };    // Disable Pan
+                userOptions.chart.pinchType = '';                  // Disable Touch Zoom
+                userOptions.chart.zoomType = '';                   // Disable Mouse Zoom
+
+                // 2. Disable Map Navigation (the +/- buttons and dragging)
+                userOptions.mapNavigation = {
+                    enabled: false
+                };
+
+                // 3. Remove "Highcharts.com" credits
+                userOptions.credits = { enabled: false };
+
+                // 4. Force Data Labels to be Uppercase & Visible
+                if(userOptions.plotOptions && userOptions.plotOptions.series) {
+                    userOptions.plotOptions.series.dataLabels = {
+                        enabled: true,
+                        style: {
+                            textOutline: '3px #000000',
+                            color: '#FFFFFF',
+                            fontSize: '14px',
+                            fontFamily: "'Bangers', cursive",
+                            textTransform: 'uppercase'
+                        }
+                    };
+                }
+
+                // 5. CUSTOM TOOLTIP FORMATTER
+                // This creates the "Card" look from your image
+                userOptions.tooltip = {
+                    useHTML: true, // Crucial for custom styling
+                    backgroundColor: 'transparent',
+                    borderWidth: 0,
+                    shadow: false,
+                    padding: 0,
+                    formatter: function () {
+                        // We generate a fake "Penguin Count" for the mockup
+                        // In a real app, this would come from this.point.penguinCount
+                        const fakeCount = Math.floor(Math.random() * 500) + 50;
+                        const fillPercent = Math.min((fakeCount / 600) * 100, 100);
+
+                        // Access data from your map.js (assuming it has owner/type/continent)
+                        // If map.js doesn't have these, they will show "Unknown"
+                        const owner = this.point.owner || "Unclaimed";
+                        const type = this.point.type || "Normal";
+                        const continent = this.point.continent || "Unknown";
+
+                        return `
+                        <div class="custom-tooltip-card">
+                            <div class="card-header">${this.key}</div>
+                            <div class="card-body">
+                                <div class="card-row">
+                                    <span>Owner:</span> <strong>${owner}</strong>
+                                </div>
+                                <div class="card-row">
+                                    <span>Type:</span> <strong>${type}</strong>
+                                </div>
+                                <div class="card-row">
+                                    <span>Continent:</span> <strong>${continent}</strong>
+                                </div>
+                                <div style="margin-top:10px; border-top:1px solid #334455; padding-top:5px;">
+                                    <div class="card-row">
+                                        <span>Penguins Online:</span>
+                                        <div>
+                                            <strong>${fakeCount}</strong>
+                                            <div class="penguin-meter">
+                                                <div class="penguin-fill" style="width:${fillPercent}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    }
+                };
+
+                // Proceed with the chart creation using our modified options
+                proceed.apply(this, [userOptions, cb]);
+            });
+        }(Highcharts));
+    </script>
 
     <script src="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/map.js"></script>
 
