@@ -12,14 +12,13 @@
     <script src="https://code.highcharts.com/maps/modules/accessibility.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/df44-1411/CPAMap2026_v1@main/styles.css">
+
     <style>
         /* --- 1. GENERAL CP UI STYLING --- */
         :root {
             --cp-blue: #0096ff;
             --cp-dark: #004080;
             --cp-stroke: #002244;
-            --cp-card-bg: rgba(10, 25, 40, 0.95); /* Dark card background */
-            --cp-card-border: #00aaff;
         }
 
         body {
@@ -31,7 +30,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            /* Scanline effect for slight retro feel */
+            /* Subtle scanline texture */
             background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
             background-size: 100% 3px;
         }
@@ -44,12 +43,12 @@
             border: 8px solid #003355;
             border-radius: 12px;
             box-shadow: 
-                inset 0 0 40px rgba(0,0,0,0.6), /* Inner shadow depth */
-                0 10px 25px rgba(0,0,0,0.5); /* Outer shadow */
+                inset 0 0 40px rgba(0,0,0,0.6), 
+                0 10px 25px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
+            position: relative; /* For absolute positioning of the note */
         }
 
         .header-title {
@@ -58,13 +57,12 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-top: 15px;
-            /* Iconic thick stroke style */
             -webkit-text-stroke: 2px var(--cp-stroke);
             text-shadow: 3px 3px 0px rgba(0,0,0,0.4);
             z-index: 10;
         }
 
-        /* --- 2. THE MAP CONTAINER (Dark Grid Style) --- */
+        /* --- 2. THE MAP CONTAINER --- */
         .map-viewport {
             width: 85%;
             height: 65%;
@@ -75,12 +73,12 @@
             box-shadow: inset 0 0 20px #000;
             overflow: hidden;
             
-            /* The "EPF" style Grid Background */
-            background-color: #001529; /* Very dark blue */
+            /* Dark Grid Background */
+            background-color: #001529; 
             background-image: 
                 linear-gradient(rgba(0, 150, 255, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 150, 255, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px; /* Grid square size */
+            background-size: 30px 30px;
         }
 
         #container {
@@ -89,36 +87,7 @@
             background: transparent !important;
         }
 
-        /* --- 3. UI CONTROLS --- */
-        /* Scroll Buttons */
-        .scroll-btn {
-            position: absolute;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(180deg, #00aaff, #0066cc);
-            border: 3px solid white;
-            border-radius: 50%;
-            box-shadow: 0 4px 0 #003366, 0 5px 10px rgba(0,0,0,0.3);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: 0.1s;
-        }
-        .scroll-btn:active { transform: translateY(4px); box-shadow: none; }
-        
-        /* Arrows inside buttons */
-        .scroll-btn::after {
-            content: ''; border: solid white; border-width: 0 5px 5px 0;
-            padding: 6px; display: inline-block;
-        }
-        .btn-up { top: 150px; }
-        .btn-up::after { transform: rotate(-135deg) translate(-2px, -2px); }
-        .btn-down { bottom: 150px; }
-        .btn-down::after { transform: rotate(45deg) translate(-2px, -2px); }
-
-        /* Footer Legend */
+        /* --- 3. FOOTER LEGEND --- */
         .footer-bar {
             width: 85%;
             margin-top: 25px;
@@ -130,12 +99,11 @@
         }
         .legend-item { display: flex; align-items: center; gap: 10px; }
 
-        /* Icon graphics (CSS Only) */
         .icon-smile {
             width: 24px; height: 24px; background: #ffcc00; border-radius: 50%; border: 2px solid #cc9900;
             position: relative;
         }
-        .icon-smile::before { /* Smile arc */
+        .icon-smile::before {
             content:''; position: absolute; bottom: 6px; left: 5px; width: 10px; height: 5px;
             border-bottom: 2px solid #553300; border-radius: 0 0 10px 10px;
         }
@@ -145,7 +113,6 @@
         }
 
         /* --- 4. CUSTOM TOOLTIP (Card Style) --- */
-        /* This replaces the default Highcharts tooltip with your image reference style */
         .custom-tooltip-card {
             background: linear-gradient(180deg, rgba(20,40,60,0.95), rgba(10,20,30,0.98));
             border: 1px solid #00ccff;
@@ -153,14 +120,15 @@
             padding: 15px;
             width: 220px;
             box-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
-            font-family: 'Verdana', sans-serif; /* Clean readable font for details */
+            font-family: 'Verdana', sans-serif;
             text-align: left;
             pointer-events: none;
             color: #ccc;
+            z-index: 9999;
         }
 
         .card-header {
-            color: #00ccff; /* Neon Blue Title */
+            color: #00ccff;
             font-family: 'Bangers', cursive;
             font-size: 26px;
             text-transform: uppercase;
@@ -178,7 +146,7 @@
         }
         .card-row strong { color: #ffffff; }
 
-        /* The "Penguin Amount" Bar */
+        /* Penguin Amount Bar */
         .penguin-meter {
             height: 6px;
             width: 100px;
@@ -191,47 +159,48 @@
         }
         .penguin-fill {
             height: 100%;
-            background: #39ff14; /* Green signal color */
+            background: #39ff14; 
             box-shadow: 0 0 5px #39ff14;
         }
 
-        /* --- 5. STICKY NOTE (Moved) --- */
+        /* --- 5. STICKY NOTE (Top Right) --- */
         .sticky-note {
             position: absolute;
-            bottom: 20px;
-            right: -60px; /* Moved slightly out */
-            width: 180px;
-            background: #fff8a0;
-            padding: 10px;
-            font-family: 'Comic Sans MS', cursive; /* Handwritten look */
-            font-size: 14px;
+            top: 25px;
+            right: 25px;
+            width: 160px;
+            background: #fff8a0; /* Post-it Yellow */
+            padding: 12px;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 13px;
             color: #222;
-            box-shadow: 2px 4px 6px rgba(0,0,0,0.3);
-            transform: rotate(-3deg);
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+            transform: rotate(2deg);
             text-align: center;
             z-index: 100;
+            border: 1px solid #e0d080;
         }
-        .tape {
-            width: 40px; height: 15px; background: rgba(255,255,255,0.4);
-            position: absolute; top: -5px; left: 35%;
-            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        .pin {
+            width: 12px; height: 12px; background: #d00; border-radius: 50%;
+            position: absolute; top: -6px; left: 50%; transform: translateX(-50%);
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
+        .sticky-note a { color: #0044cc; text-decoration: underline; font-weight: bold; }
 
         /* --- 6. HIGHCHARTS OVERRIDES --- */
-        /* Make the outlines thicker/brighter */
+        /* Use CSS to ensure outlines are thick and white */
         .highcharts-point {
             stroke: #ffffff !important;
             stroke-width: 1.5px !important;
-            stroke-opacity: 0.8 !important;
+            stroke-opacity: 0.9 !important;
         }
-        /* Hover state for territories */
+        /* Hover effect */
         .highcharts-point:hover {
             stroke: #00ccff !important;
             stroke-width: 3px !important;
-            fill-opacity: 1 !important;
-            filter: drop-shadow(0 0 5px #00ccff);
+            filter: drop-shadow(0 0 8px #00ccff);
         }
-        /* Make labels use the Action Man font */
+        /* Labels: White, Uppercase, Bangers Font */
         .highcharts-data-label text {
             font-family: 'Bangers', cursive !important;
             font-size: 14px !important;
@@ -247,24 +216,21 @@
     <div class="cp-interface">
         <div class="header-title">Army Map Servers</div>
 
+        <div class="sticky-note">
+            <div class="pin"></div>
+            <strong>NOTICE:</strong><br>
+            Map View Active.<br>
+            <a href="#" onclick="alert('Redirecting...')">Use Server List Instead</a>
+        </div>
+
         <div class="map-viewport">
             <div id="container"></div>
         </div>
-
-        <div class="scroll-btn btn-up" onclick="alert('Scroll Up')"></div>
-        <div class="scroll-btn btn-down" onclick="alert('Scroll Down')"></div>
 
         <div class="footer-bar">
             <div class="legend-item"><div class="icon-smile"></div> Buddies Online</div>
             <div class="legend-item"><div class="icon-signal"></div> Amount of Penguins</div>
             <div class="legend-item" style="font-size: 16px;">Ultimate Safe Chat</div>
-        </div>
-
-        <div class="sticky-note">
-            <div class="tape"></div>
-            <strong>NOTICE:</strong><br>
-            Use the Server List for legacy view.<br>
-            <a href="#" style="color:blue">Click Here</a>
         </div>
     </div>
 
@@ -272,23 +238,36 @@
         (function(H) {
             H.wrap(H.Chart.prototype, 'init', function (proceed, userOptions, cb) {
                 
-                // 1. Force styling overrides
+                // 1. Chart Global Settings
                 userOptions.chart = userOptions.chart || {};
-                userOptions.chart.backgroundColor = 'transparent'; // Transparent for Grid
-                userOptions.chart.panning = { enabled: false };    // Disable Pan
-                userOptions.chart.pinchType = '';                  // Disable Touch Zoom
-                userOptions.chart.zoomType = '';                   // Disable Mouse Zoom
-
-                // 2. Disable Map Navigation (the +/- buttons and dragging)
-                userOptions.mapNavigation = {
-                    enabled: false
-                };
-
-                // 3. Remove "Highcharts.com" credits
+                userOptions.chart.backgroundColor = 'transparent'; // Let the grid show
+                
+                // Disable all movement
+                userOptions.chart.panning = { enabled: false };
+                userOptions.chart.pinchType = '';
+                userOptions.chart.zoomType = '';
+                userOptions.mapNavigation = { enabled: false };
                 userOptions.credits = { enabled: false };
 
-                // 4. Force Data Labels to be Uppercase & Visible
-                if(userOptions.plotOptions && userOptions.plotOptions.series) {
+                // 2. Series & Map Settings
+                // We do NOT set fillColor here so your map.js colors persist.
+                // We ONLY enforce the outlines and labels.
+                userOptions.plotOptions = userOptions.plotOptions || {};
+                userOptions.plotOptions.map = {
+                    borderColor: '#FFFFFF', // Force white borders
+                    borderWidth: 1.5,
+                    nullColor: 'transparent',
+                    states: {
+                        hover: {
+                            color: undefined, // Don't override color on hover
+                            borderColor: '#00ccff',
+                            borderWidth: 3
+                        }
+                    }
+                };
+
+                // Enforce font styles on data labels
+                if(userOptions.plotOptions.series) {
                     userOptions.plotOptions.series.dataLabels = {
                         enabled: true,
                         style: {
@@ -301,22 +280,20 @@
                     };
                 }
 
-                // 5. CUSTOM TOOLTIP FORMATTER
-                // This creates the "Card" look from your image
+                // 3. Custom Card Tooltip
                 userOptions.tooltip = {
-                    useHTML: true, // Crucial for custom styling
+                    useHTML: true,
                     backgroundColor: 'transparent',
                     borderWidth: 0,
                     shadow: false,
                     padding: 0,
+                    followPointer: true,
                     formatter: function () {
-                        // We generate a fake "Penguin Count" for the mockup
-                        // In a real app, this would come from this.point.penguinCount
+                        // Mock data for the "Penguins" bar
                         const fakeCount = Math.floor(Math.random() * 500) + 50;
                         const fillPercent = Math.min((fakeCount / 600) * 100, 100);
 
-                        // Access data from your map.js (assuming it has owner/type/continent)
-                        // If map.js doesn't have these, they will show "Unknown"
+                        // Safe access to your map data properties
                         const owner = this.point.owner || "Unclaimed";
                         const type = this.point.type || "Normal";
                         const continent = this.point.continent || "Unknown";
@@ -325,15 +302,9 @@
                         <div class="custom-tooltip-card">
                             <div class="card-header">${this.key}</div>
                             <div class="card-body">
-                                <div class="card-row">
-                                    <span>Owner:</span> <strong>${owner}</strong>
-                                </div>
-                                <div class="card-row">
-                                    <span>Type:</span> <strong>${type}</strong>
-                                </div>
-                                <div class="card-row">
-                                    <span>Continent:</span> <strong>${continent}</strong>
-                                </div>
+                                <div class="card-row"><span>Owner:</span> <strong>${owner}</strong></div>
+                                <div class="card-row"><span>Type:</span> <strong>${type}</strong></div>
+                                <div class="card-row"><span>Continent:</span> <strong>${continent}</strong></div>
                                 <div style="margin-top:10px; border-top:1px solid #334455; padding-top:5px;">
                                     <div class="card-row">
                                         <span>Penguins Online:</span>
@@ -350,7 +321,6 @@
                     }
                 };
 
-                // Proceed with the chart creation using our modified options
                 proceed.apply(this, [userOptions, cb]);
             });
         }(Highcharts));
