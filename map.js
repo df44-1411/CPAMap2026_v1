@@ -481,8 +481,8 @@ Highcharts.mapChart('container', {
         buttonOptions: {
             verticalAlign: 'top',
             align: 'left',
-            x: 20,
-            y: 20,
+            x: 15,
+            y: 30,
             width: 20,  // Reduced from 28 
             height: 20, // Reduced from 28
             padding: 0, // Keeps the button tight around the symbol
@@ -514,7 +514,7 @@ Highcharts.mapChart('container', {
                 y: 0 // Top button stays put
             },
             zoomOut: {
-                y: 26 // Moves bottom button down: 20px (height) + 6px (gap)
+                y: 20 // Moves bottom button down: 20px (height) 
             }
         }
     },
