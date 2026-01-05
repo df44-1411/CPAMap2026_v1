@@ -465,13 +465,16 @@ var mapData = [
 Highcharts.mapChart('container', {
     chart: {
 		// testing null
-        height: null,
+        height: '45%',
         // weight: 'auto',
         backgroundColor: 'transparent',
         type: 'map', // Trocado para 'map' para garantir que funciona bem
         map: 'cpa',
 		margin: 0,
         spacing: [0, 0, 0, 0]
+    },
+	mapView: {
+        padding: 0 
     },
     title: {
         text: ''
