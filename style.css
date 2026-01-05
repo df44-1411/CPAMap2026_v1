@@ -253,3 +253,40 @@ body {
     color: #fff;
     font-weight: 600;
 }
+
+/* --- Mobile Responsiveness --- */
+@media screen and (max-width: 768px) {
+    /* 1. Stack the main containers vertically */
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;      /* Remove fixed height so page can scroll */
+        overflow-y: auto;  /* Enable vertical scrolling */
+    }
+
+    /* 2. Set a fixed height for the map on mobile */
+    .map-wrapper {
+        flex: none;        /* Stop it from trying to fill remaining space */
+        height: 60vh;      /* Map takes up 60% of the screen height */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Adjust Sidebar to sit below */
+    .sidebar {
+        flex: none;
+        width: 100%;       /* Full width sidebar */
+        min-height: 500px; /* Ensure iframe content has space */
+    }
+    
+    /* 4. Tweak Navbar for small screens */
+    .top-nav {
+        padding: 0 10px;
+    }
+    .logo-section h1 {
+        font-size: 1.1rem; /* Smaller text */
+    }
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+}
