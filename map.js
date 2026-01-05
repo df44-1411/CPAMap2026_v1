@@ -481,21 +481,24 @@ Highcharts.mapChart('container', {
         buttonOptions: {
             verticalAlign: 'top',
             align: 'left',
-            x: 20, // Moves buttons 20px from the left
-            y: 20, // Moves buttons 20px from the top
-            width: 28,
-            height: 28,
+            x: 20,
+            y: 20,
+            width: 20,  // Reduced from 28 
+            height: 20, // Reduced from 28
+            padding: 0, // Keeps the button tight around the symbol
             style: {
-                color: '#00f3ff' // Default text color (Neon Blue)
+                color: '#00f3ff',
+                fontSize: '12px', 
+                fontWeight: 'bold'
             },
             theme: {
                 'stroke-width': 1,
-                stroke: 'rgba(0, 243, 255, 0.3)', // Neon Border
-                fill: 'rgba(20, 30, 50, 0.95)',   // Dark Tooltip Background
+                stroke: 'rgba(0, 243, 255, 0.3)',
+                fill: 'rgba(20, 30, 50, 0.95)',
                 r: 4, // Rounded corners
                 states: {
                     hover: {
-                        fill: 'rgba(0, 243, 255, 0.1)', // Glow on hover
+                        fill: 'rgba(0, 243, 255, 0.1)',
                         stroke: '#00f3ff'
                     },
                     select: {
@@ -503,6 +506,15 @@ Highcharts.mapChart('container', {
                         stroke: '#00f3ff'
                     }
                 }
+            }
+        },
+        // ATTEMPT FIXING THE OVERLAP CAUSED
+        buttons: {
+            zoomIn: {
+                y: 0 // Top button stays put
+            },
+            zoomOut: {
+                y: 26 // Moves bottom button down: 20px (height) + 6px (gap)
             }
         }
     },
