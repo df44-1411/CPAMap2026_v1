@@ -465,7 +465,7 @@ var mapData = [
 Highcharts.mapChart('container', {
     chart: {
 		// testing null
-        height: '45%',
+        height: '40%',
         // weight: 'auto',
         backgroundColor: 'transparent',
         type: 'map', // Trocado para 'map' para garantir que funciona bem
