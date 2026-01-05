@@ -1,6 +1,6 @@
 //CPA MAP - A PROJECT FOR CPA ORG
 
-//MAP DESIGN by Dino HIGHCHARTS DEVELOPMENT by df44 (Discord:.df44) (c) 2024 All Rights Reserved
+//MAP DESIGN by Dino HIGHCHARTS DEVELOPMENT by df44 (Discord:.df44) (c) 2025-26 All Rights Reserved
 
 //MAP STARTS HERE!!
 var mapData = [
@@ -465,10 +465,12 @@ var mapData = [
 Highcharts.mapChart('container', {
     chart: {
         height: 'fill',
-        weight: 'auto',
+        // weight: 'auto',
         backgroundColor: 'transparent',
         type: 'map', // Trocado para 'map' para garantir que funciona bem
         map: 'cpa',
+		margin: 0,
+        spacing: [0, 0, 0, 0]
     },
     title: {
         text: ''
@@ -477,6 +479,9 @@ Highcharts.mapChart('container', {
         enabled: true
     },
     legend: {
+        enabled: false
+    },
+	credits: {
         enabled: false
     },
     plotOptions: {
