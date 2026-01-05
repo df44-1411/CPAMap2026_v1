@@ -476,7 +476,35 @@ Highcharts.mapChart('container', {
         text: ''
     },
     mapNavigation: {
-        enabled: true
+        enabled: true,
+        enableDoubleClickZoomTo: true,
+        buttonOptions: {
+            verticalAlign: 'top',
+            align: 'left',
+            x: 20, // Moves buttons 20px from the left
+            y: 20, // Moves buttons 20px from the top
+            width: 28,
+            height: 28,
+            style: {
+                color: '#00f3ff' // Default text color (Neon Blue)
+            },
+            theme: {
+                'stroke-width': 1,
+                stroke: 'rgba(0, 243, 255, 0.3)', // Neon Border
+                fill: 'rgba(20, 30, 50, 0.95)',   // Dark Tooltip Background
+                r: 4, // Rounded corners
+                states: {
+                    hover: {
+                        fill: 'rgba(0, 243, 255, 0.1)', // Glow on hover
+                        stroke: '#00f3ff'
+                    },
+                    select: {
+                        fill: 'rgba(0, 243, 255, 0.2)',
+                        stroke: '#00f3ff'
+                    }
+                }
+            }
+        }
     },
     legend: {
         enabled: false
