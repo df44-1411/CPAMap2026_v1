@@ -262,6 +262,12 @@ body {
         box-sizing: border-box;
     }
 
+    body {
+        overflow-y: auto !important; 
+        height: auto !important;
+        display: block; /* Removes flex constraints so content flows naturally */
+    }
+    
     .dashboard-container {
         flex-direction: column;
         padding: 10px; /* Reduced padding from 20px to give more space */
