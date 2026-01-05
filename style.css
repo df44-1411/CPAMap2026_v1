@@ -256,37 +256,56 @@ body {
 
 /* --- Mobile Responsiveness --- */
 @media screen and (max-width: 768px) {
-    /* 1. Stack the main containers vertically */
+    
+    /* Global box-sizing fix for mobile elements */
+    * {
+        box-sizing: border-box;
+    }
+
     .dashboard-container {
         flex-direction: column;
-        height: auto;      /* Remove fixed height so page can scroll */
-        overflow-y: auto;  /* Enable vertical scrolling */
+        padding: 10px; /* Reduced padding from 20px to give more space */
+        gap: 15px;     /* Consistent gap between Map and Sidebar */
     }
 
-    /* 2. Set a fixed height for the map on mobile */
-    .map-wrapper {
-        flex: none;        /* Stop it from trying to fill remaining space */
-        height: 60vh;      /* Map takes up 60% of the screen height */
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    /* 3. Adjust Sidebar to sit below */
-    .sidebar {
+    .map-wrapper, .sidebar {
         flex: none;
-        width: 100%;       /* Full width sidebar */
-        min-height: 500px; /* Ensure iframe content has space */
+        width: 100% !important; /* Forces exact same width */
+        margin: 0 !important;   /* Removes any rogue margins */
+        border-radius: 8px;     /* Matches corners */
     }
-    
-    /* 4. Tweak Navbar for small screens */
+
+    .map-wrapper {
+        height: 50vh; /* Adjust map height (50% of screen) */
+    }
+
+    .sidebar {
+        height: auto;
+        min-height: 400px; /* Ensures sidebar has enough height */
+    }
     .top-nav {
-        padding: 0 10px;
+        padding: 0 10px; /* Minimal padding on sides */
+        height: 60px;    /* Slightly shorter header */
     }
+
     .logo-section h1 {
-        font-size: 1.1rem; /* Smaller text */
+        font-size: 1rem; /* Smaller Logo Text */
+        letter-spacing: 0.5px;
+        white-space: nowrap; /* Prevents wrapping */
     }
+
+    /* Adjust the "LIVE" badge position */
+    .logo-section h1 span {
+        font-size: 0.4em !important; 
+    }
+
+    .nav-links {
+        gap: 8px; /* Tighter gap between links */
+    }
+
     .nav-links a {
-        font-size: 0.8rem;
-        padding: 5px;
+        font-size: 0.7rem; /* Smaller link text */
+        padding: 4px 6px;  /* Smaller touch targets */
+        letter-spacing: 0; /* Save space */
     }
 }
