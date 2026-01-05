@@ -464,7 +464,8 @@ var mapData = [
 
 Highcharts.mapChart('container', {
     chart: {
-        height: 'fill',
+		// testing null
+        height: null,
         // weight: 'auto',
         backgroundColor: 'transparent',
         type: 'map', // Trocado para 'map' para garantir que funciona bem
@@ -482,10 +483,10 @@ Highcharts.mapChart('container', {
             verticalAlign: 'top',
             align: 'left',
             x: 15,
-            y: 30,
-            width: 20,  // Reduced from 28 
-            height: 20, // Reduced from 28
-            padding: 0, // Keeps the button tight around the symbol
+            y: 40,
+            width: 20,  
+            height: 20, 
+            padding: 0, 
             style: {
                 color: '#00f3ff',
                 fontSize: '12px', 
