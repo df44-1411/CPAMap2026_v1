@@ -592,6 +592,8 @@ Highcharts.mapChart('container', {
         // Estilo do Texto no Mapa (Nomes dos Servidores)
         dataLabels: {
             enabled: true,
+			allowOverlap: true, // Força a aparecer mesmo que se toquem
+            crop: false,
             style: {
                 textOutline: '1px black', // AQUI ESTÁ O CONTORNO PRETO
                 color: '#e0e6ed',
