@@ -595,10 +595,10 @@ Highcharts.mapChart('container', {
 			allowOverlap: true, // Força a aparecer mesmo que se toquem
             crop: false,
             style: {
-                textOutline: '2px black', // AQUI ESTÁ O CONTORNO PRETO
+                textOutline: '1px black', // AQUI ESTÁ O CONTORNO PRETO
                 color: '#e0e6ed',
                 fontWeight: 'bold',
-                fontSize: '9px',
+                fontSize: '8px',
                 fontFamily: 'Rajdhani, sans-serif'
             },
             formatter: function() {
