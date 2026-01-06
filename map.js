@@ -595,15 +595,15 @@ Highcharts.mapChart('container', {
 			allowOverlap: true, // Força a aparecer mesmo que se toquem
             crop: false,
             style: {
-                textOutline: '1px black', // AQUI ESTÁ O CONTORNO PRETO
+                textOutline: '2px black', // AQUI ESTÁ O CONTORNO PRETO
                 color: '#e0e6ed',
                 fontWeight: 'bold',
-                fontSize: '11px',
+                fontSize: '9px',
                 fontFamily: 'Rajdhani, sans-serif'
             },
             formatter: function() {
                 if (this.point.type === "CAPITAL") {
-                    return '<span style="color: #00ff00; font-size: 11px;">' + this.point.name + '</span>';
+                    return '<span style="color: #00ff00;">' + this.point.name + '</span>';
                 } else {
                     return this.point.name;
                 }
