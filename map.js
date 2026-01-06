@@ -592,19 +592,13 @@ Highcharts.mapChart('container', {
         // Estilo do Texto no Mapa (Nomes dos Servidores)
         dataLabels: {
             enabled: true,
-			allowOverlap: true, // Força a aparecer mesmo que se toquem
+			//allowOverlap: true, // Força a aparecer mesmo que se toquem
             crop: false,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)', // Fundo preto com 60% opacidade
-            borderRadius: 3,      // Cantos ligeiramente arredondados
-            padding: 2,           // Espaço interno (o tal "padding" que querias)
-            borderWidth: 0,
-            // --------------------------------
-
             style: {
-                textOutline: 'none', // Removemos o contorno preto, já não é preciso
-                color: '#ffffff',    // Texto branco puro para contraste máximo
-                fontWeight: '600',   // Um pouco menos espesso que 'bold' para poupar espaço
-                fontSize: '10px',    // Tamanho legível
+                textOutline: '1px black', // AQUI ESTÁ O CONTORNO PRETO
+                color: '#e0e6ed',
+                fontWeight: 'bold',
+                fontSize: '12px',
                 fontFamily: 'Rajdhani, sans-serif'
             },
             formatter: function() {
