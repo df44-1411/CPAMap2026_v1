@@ -254,7 +254,7 @@
                 });
             } else if (event.data.type === 'resetMap') {
                 chart.series[0].points.forEach(point => {
-                    point.setState('normal');
+                    point.setState('');
                 });
             }
         });
