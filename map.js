@@ -623,9 +623,7 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
-    if (point.controller === "Clover Fake"){
-        point.graphic.addClass('CF');
-    }
+    
     
     
     if (point.controller === "Club Penguin Armies") {
