@@ -29,7 +29,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                background: rgba(20, 30, 50, 0.85);
+                /* Default background removed here because it will be set inline */
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-left-width: 5px;
                 margin-bottom: 8px;
@@ -43,8 +43,8 @@
 
             .army-card:hover {
                 transform: translateX(5px);
-                background: rgba(40, 50, 80, 0.95);
-                border-color: rgba(46, 204, 113, 0.5);
+                /* Hover will simply brighten the card slightly */
+                filter: brightness(1.2); 
             }
 
             .army-name {
@@ -86,32 +86,32 @@
     </head>
     <body>
     
-        <div class="army-card" style="border-left-color: #043acf;">
+        <div class="army-card" style="border-left-color: #043acf; background: rgba(20, 60, 40, 0.85);">
             <span class="army-name">Water Vikings</span>
             <span class="army-count">🌊 25,600</span>
         </div>
         
-        <div class="army-card" style="border-left-color: #2b8b1f;">
+        <div class="army-card" style="border-left-color: #f1c40f; background: rgba(20, 60, 40, 0.85);">
+            <span class="army-name">Templars</span>
+            <span class="army-count">⚔️ 200</span>
+        </div>
+        
+        <div class="army-card" style="border-left-color: #2b8b1f; background: rgba(20, 60, 40, 0.85);">
             <span class="army-name">Army of Club Penguin</span>
             <span class="army-count">🪙 20</span>
         </div>
         
-        <div class="army-card" style="border-left-color: #f1c40f;">
-            <span class="army-name">Templars</span>
-            <span class="army-count">⚔️ 0</span>
-        </div>
-        
-        <div class="army-card" style="border-left-color: #000dff;">
+        <div class="army-card" style="border-left-color: #000dff; background: rgba(100, 20, 20, 0.85);">
             <span class="army-name">Help Force</span>
             <span class="army-count">🪙 0</span>
         </div>
         
-        <div class="army-card" style="border-left-color: #ff6666;">
+        <div class="army-card" style="border-left-color: #ff6666; background: rgba(100, 20, 20, 0.85);">
             <span class="army-name">Smart Penguins</span>
             <span class="army-count">🪙 0</span>
         </div>
         
-        <div class="army-card" style="border-left-color: #060505;">
+        <div class="army-card" style="border-left-color: #060505; background: rgba(100, 20, 20, 0.85);">
             <span class="army-name">Rebel Penguin Federation</span>
             <span class="army-count">🪙 0</span>
         </div>
