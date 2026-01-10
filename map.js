@@ -638,8 +638,8 @@ function(chart) {
     	point.graphic.addClass('Free');
     }
     if (point.controller === "Water Vikings"){
-        point.graphic.addClass('WV');
-    }
+                point.graphic.addClass('WV');
+            }
     if (point.controller === "Army of Club Penguin"){
     	point.graphic.addClass('ACP');
     }
