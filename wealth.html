@@ -74,6 +74,9 @@
                 border: 1px solid rgba(255,255,255,0.1);
                 display: flex;
                 align-items: center;
+                /* --- A CORREÇÃO ESTÁ AQUI --- */
+                white-space: nowrap; /* Impede quebra de linha */
+                flex-shrink: 0;      /* Impede que a caixa encolha */
                 gap: 6px;
             }
             .currency-icon {
@@ -103,7 +106,7 @@
         
         <div class="army-card" style="border-left-color: #2b8b1f;">
             <span class="army-name">Army of Club Penguin</span>
-            <span class="army-count" style="background: rgba(40, 160, 80, 0.4); border: 1px solid rgba(80, 255, 120, 0.6);">🪙 20</span>
+            <span class="army-count" style="background: rgba(40, 160, 80, 0.4); border: 1px solid rgba(80, 255, 120, 0.6);">🪙 50</span>
         </div>
         
         <div class="army-card" style="border-left-color: #000dff;">
