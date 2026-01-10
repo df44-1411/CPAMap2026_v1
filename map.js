@@ -641,8 +641,8 @@ function(chart) {
                 point.graphic.addClass('WV');
             }
     if (point.controller === "Army of Club Penguin"){
-    	point.graphic.addClass('ACP');
-    }
+                point.graphic.addClass('ACP');
+            }
     if (point.controller === "Elite Guardians of Club Penguin"){
     	point.graphic.addClass('EGCP');
     }
