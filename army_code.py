@@ -14,7 +14,7 @@ search_terms = {
     "Rebel Penguin Federation": "#060505",
     "Aliens": "#90ee90",
     "Scarlet Republic": "#a51010",
-    "Water Vikings": "#043acf"""""",
+    "Water Vikings": "#043acf""""""",
     "Penguins of Agartha": "#12690e",
     "Fire Vikings": "#8b0000",
     "Elite Guardians of Club Penguin": "#787e7f",
