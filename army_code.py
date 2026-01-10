@@ -2,7 +2,7 @@ import operator
 import re
 
 search_terms = {
-    "Dillons Underground Mafias Army": "#ff0000",
+    "Dillons UMA": "#ff0000"",
     "Club Penguin Armies": "#87d1ff",
     "CPA Battleground": "#ff4d4d",
     "Club Penguin Army Judges": "#ff3366",
