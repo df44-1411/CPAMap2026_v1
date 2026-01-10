@@ -699,6 +699,10 @@ function(chart) {
      if (point.controller === "Smart Penguins"){
     	point.graphic.addClass('SP');
     }
+	 if (point.controller === "Scarlet Republic"){
+    	point.graphic.addClass('SR');
+    }
+	
     
   });
 });
