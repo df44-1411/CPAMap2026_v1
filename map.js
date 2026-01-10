@@ -685,8 +685,8 @@ function(chart) {
     }
     
     if (point.controller === "Templars"){
-    	point.graphic.addClass('TCP');
-    }
+                point.graphic.addClass('TCP');
+            }
     if (point.controller === "Rebel Penguin Federation"){
     	point.graphic.addClass('RPF');
     }
