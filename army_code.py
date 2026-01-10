@@ -12,7 +12,6 @@ search_terms = {
     "Help Force": "#000dff",
     "Rebel Penguin Federation": "#060505",
     "Aliens": "#90ee90",
-    "Scarlet Republic": "#a51010",
     "Water Vikings": "#043acf",
     "Penguins of Agartha": "#12690e",
     "Fire Vikings": "#8b0000",
