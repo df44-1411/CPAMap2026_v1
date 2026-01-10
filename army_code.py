@@ -1,8 +1,7 @@
 import operator
 import re
 
-search_terms = {
-    "UMA": "#ff0000""",
+search_terms = {"",
     "Club Penguin Armies": "#87d1ff",
     "CPA Battleground": "#ff4d4d",
     "Club Penguin Army Judges": "#ff3366",
