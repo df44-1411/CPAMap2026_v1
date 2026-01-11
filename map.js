@@ -623,6 +623,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Warlords of Kosmos"){
+        point.graphic.addClass('WOK');
+    }
     if (point.controller === "superhero army"){
         point.graphic.addClass('sp');
     }
