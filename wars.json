@@ -1,1 +1,15 @@
-{}
+{
+  "Second War of Roman Subjugation": {
+    "name": "Second War of Roman Subjugation",
+    "date": "Jan 11, 2026",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Water Vikings"
+    ],
+    "side_b": [
+      "Romans"
+    ],
+    "ending_date": null,
+    "winner": null
+  }
+}
