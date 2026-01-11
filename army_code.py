@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Dinos Pizza Troops": "#AFF1F1",
     "Jojos Terrorists": "#DFDFDF",
     "Church of Aurora": "#8900c9",
     "Warlords of Kosmos": "#000001",
