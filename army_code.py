@@ -2,8 +2,8 @@ import operator
 import re
 
 search_terms = {
-    "Warlords of Kosmos": "#000000"",
-    "superhero army": "#ff0000"",
+    "Warlords of Kosmos": "#000000",
+    "superhero army": "#ff0000",
     "Dfs Testing Army": "#adbfde",
     "Scarlet Republic": "#a51010",
     "Club Penguin Armies": "#87d1ff",
