@@ -3,7 +3,6 @@ import re
 
 search_terms = {
     "Dfs Testing Army": "#adbfde",
-    "White Troops": "#adbfdb",
     "Scarlet Republic": "#a51010",
     "Club Penguin Armies": "#87d1ff",
     "CPA Battleground": "#ff4d4d",
