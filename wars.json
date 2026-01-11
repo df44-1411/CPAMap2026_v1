@@ -1,17 +1,1 @@
-{
-  "Golden Seas War": {
-    "name": "Golden Seas War",
-    "date": "Jan 3",
-    "status": "Declaration Issued",
-    "side_a": [
-      "Water Vikings",
-      "Smart Penguins"
-    ],
-    "side_b": [
-      "Templars",
-      "Romans"
-    ],
-    "ending_date": null,
-    "winner": null
-  }
-}
+{}
