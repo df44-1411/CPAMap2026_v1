@@ -13,18 +13,5 @@
     ],
     "ending_date": null,
     "winner": null
-  },
-  "NO WAR": {
-    "name": "NO WAR",
-    "date": "Jan 3",
-    "status": "Ongoing Conflict",
-    "side_a": [
-      "Kanye West Army"
-    ],
-    "side_b": [
-      "Army of Club Penguin"
-    ],
-    "ending_date": null,
-    "winner": null
   }
 }
