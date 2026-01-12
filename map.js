@@ -891,9 +891,7 @@ function(chart) {
     
     
     
-    if (point.controller === "superhero army"){
-        point.graphic.addClass('sp');
-    }
+    
     
     if (point.controller === "Aliens"){
         point.graphic.addClass('ALIENS');
