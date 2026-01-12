@@ -929,9 +929,7 @@ function(chart) {
     if (point.controller === "Special Weapons and Tactics"){
     	point.graphic.addClass('SWAT');
     }
-    if (point.controller === "Silver Empire"){
-    	point.graphic.addClass('SE');
-    }
+    
     if (point.controller === "Shreks of CP"){
     	point.graphic.addClass('SHREKS');
     }
