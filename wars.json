@@ -11,5 +11,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Siege of the Hollow Throne": {
+    "name": "Siege of the Hollow Throne",
+    "date": "Jan 11",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Templars"
+    ],
+    "side_b": [
+      "Void Troops"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
