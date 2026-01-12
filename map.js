@@ -729,7 +729,7 @@ var mapData = [
 Highcharts.mapChart('container', {
     chart: {
 		// testing null
-        height: '50%',
+        height: '55%',
         // weight: 'auto',
         backgroundColor: 'transparent',
         type: 'map', // Trocado para 'map' para garantir que funciona bem
