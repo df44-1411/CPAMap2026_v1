@@ -890,9 +890,7 @@ function(chart) {
     
     
     
-    if (point.controller === "Warlords of Kosmos"){
-        point.graphic.addClass('WOK');
-    }
+    
     if (point.controller === "superhero army"){
         point.graphic.addClass('sp');
     }
