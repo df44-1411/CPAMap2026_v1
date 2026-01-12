@@ -889,9 +889,7 @@ function(chart) {
   chart.series[0].points.forEach(function(point) {
     
     
-    if (point.controller === "Church of Aurora"){
-        point.graphic.addClass('COA');
-    }
+    
     if (point.controller === "Warlords of Kosmos"){
         point.graphic.addClass('WOK');
     }
