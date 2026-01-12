@@ -153,22 +153,6 @@ html_content += """
 with open("army_code.html", 'w') as file:
     file.write(html_content)
 print("army_code.html updated. Logic fixed to exclude code comments/assignments.")
-html_content += """
-<script>
-    const cards = document.querySelectorAll('.army-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            const name = card.querySelector('.army-name').innerText;
-            window.parent.postMessage({ type: 'hoverArmy', army: name }, '*');
-        });
-        card.addEventListener('mouseleave', () => {
-            window.parent.postMessage({ type: 'resetMap' }, '*');
-        });
-    });
-</script>
-</body>
-</html>
-"""
 
 with open("army_code.html", 'w') as file:
     file.write(html_content)
