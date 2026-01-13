@@ -254,6 +254,35 @@ body {
     font-weight: 600;
 }
 
+/* --- ANIMAÇÕES DE ATAQUE (BOMB/NUKE) --- */
+
+/* BOMB: Pisca a vermelho (Alerta de perigo) */
+.bomb-active {
+    animation: blink-red 1s infinite alternate;
+    stroke: #ff0000 !important;
+    stroke-width: 3px !important;
+    fill-opacity: 0.9;
+}
+
+/* NUKE: Pulsação Amarela Radioativa (Toxicidade) */
+.nuke-active {
+    animation: toxic-glow 2s infinite;
+    stroke: #ccff00 !important;
+    stroke-width: 4px !important;
+    fill: #2b331a !important;
+}
+
+@keyframes blink-red {
+    from { stroke: #ff0000; fill: #500000; }
+    to { stroke: #800000; fill: #200000; }
+}
+
+@keyframes toxic-glow {
+    0% { stroke: #ccff00; filter: drop-shadow(0 0 2px #ccff00); }
+    50% { stroke: #ffff00; filter: drop-shadow(0 0 8px #ff0000); }
+    100% { stroke: #ccff00; filter: drop-shadow(0 0 2px #ccff00); }
+}
+
 /* --- Mobile Responsiveness --- */
 @media screen and (max-width: 768px) {
     
