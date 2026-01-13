@@ -979,7 +979,9 @@ function(chart) {
 	 if (point.controller === "Scarlet Republic"){
     	point.graphic.addClass('SR');
     }
-	
+	 if (point.effect) {
+        point.graphic.addClass(point.effect);
+    }
     
   });
 });
