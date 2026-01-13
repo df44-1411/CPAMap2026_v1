@@ -2,7 +2,7 @@ import operator
 import re
 
 search_terms = {
-    "Locked Land": "#0D304C",
+    "Locked Land": "#051020",
     "Dfs Testing Army": "#adbfde",
     "Scarlet Republic": "#a51010",
     "Club Penguin Armies": "#87d1ff",
