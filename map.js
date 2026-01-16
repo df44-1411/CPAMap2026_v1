@@ -983,6 +983,9 @@ function(chart) {
 	 if (point.effect) {
         point.graphic.addClass(point.effect);
     }
+	 if (point.hotspot === true) {
+        point.graphic.addClass('hotspot-active');
+    }
     
   });
 });
