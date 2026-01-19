@@ -37,5 +37,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "ACP vs SR": {
+    "name": "ACP vs SR",
+    "date": "Jan 20",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Army of Club Penguin"
+    ],
+    "side_b": [
+      "Scarlet Republic"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
