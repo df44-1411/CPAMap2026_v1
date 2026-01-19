@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Teutons": "#020061",
     "Locked Land": "#051020",
     "Dfs Testing Army": "#adbfde",
     "Scarlet Republic": "#a51010",
