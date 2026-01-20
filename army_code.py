@@ -81,6 +81,7 @@ html_content = """
         padding: 5px 10px 5px 5px;
         overflow-x: hidden;
         overflow-y: auto;
+        user-select: none;
     }
 
     .army-card {
