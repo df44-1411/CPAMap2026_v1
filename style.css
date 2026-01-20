@@ -142,6 +142,7 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 250px;
+    user-select: none;
 }
 
 .sidebar h2 {
