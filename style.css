@@ -24,6 +24,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    user-select: none;
     overflow: hidden; /* Evita scroll na página inteira, apenas no mapa se necessário */
 }
 
