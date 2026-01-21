@@ -662,6 +662,9 @@ function(chart) {
     if (point.controller === "Teutons"){
         point.graphic.addClass('Teutons');
     }
+	if (point.controller === "Star Force"){
+        point.graphic.addClass('SF');
+    }
     if (point.controller === "Locked Land"){
         point.graphic.addClass('LOCKED');
     }
