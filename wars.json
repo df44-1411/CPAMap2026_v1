@@ -52,5 +52,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Kanye vs Wii phone": {
+    "name": "Kanye vs Wii phone",
+    "date": "Jan 20, 2026",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Kanye West Army"
+    ],
+    "side_b": [
+      "wii phone"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
