@@ -1,4 +1,4 @@
-/* style.css - Modern CPA Map Interface by df44*/
+/* style.css - Modern CPA Map Interface by df44 */
 :root {
     --bg-dark: #050510;
     --bg-mapp: #003d62;
@@ -300,7 +300,7 @@ body {
 }
 
 /* --- Mobile Responsiveness --- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     
     /* 1. Global Reset & Box Sizing */
     * {
@@ -374,5 +374,80 @@ body {
         /* Scroll interno */
         overflow-y: auto; 
         -webkit-overflow-scrolling: touch;
+    }
+}
+/* --- MODO HORIZONTAL (LANDSCAPE) --- */
+@media screen and (max-width: 920px) and (orientation: landscape) {
+    
+    /* 1. Bloquear Scroll Geral */
+    html, body {
+        height: 100dvh !important;
+        width: 100vw !important;
+        overflow: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* 2. HEADER MINIMALISTA */
+    .top-nav {
+        height: 35px !important;
+        min-height: 35px !important;
+        flex-shrink: 0; /* Não deixa encolher */
+        padding: 0 10px !important;
+        z-index: 50;
+    }
+    .logo-section h1 { font-size: 0.9rem !important; line-height: 35px; }
+    .nav-links a { font-size: 0.65rem !important; padding: 2px 5px !important; line-height: 25px; }
+
+    /* 3. O CONTAINER AJUSTA-SE SOZINHO (A MUDANÇA IMPORTANTE) */
+    .dashboard-container {
+        flex: 1 !important;        /* Ocupa exatamente o espaço entre Nav e Footer */
+        height: auto !important;   /* Removemos o calc() fixo */
+        min-height: 0 !important;  /* Crucial: permite que o conteúdo encolha se necessário */
+        
+        flex-direction: row !important;
+        align-items: stretch !important;
+        padding: 5px 10px !important;
+        gap: 10px !important;
+        overflow: hidden !important;
+    }
+
+    /* 4. MAPA (Esquerda) */
+    .map-wrapper {
+        flex: 1.4 !important;
+        width: auto !important;
+        height: auto !important; /* Deixa o flex pai controlar a altura */
+        margin: 0 !important;
+        border-radius: 6px !important;
+    }
+
+    /* 5. SIDEBAR (Direita) */
+    .sidebar {
+        flex: 1 !important;
+        width: auto !important;
+        height: auto !important; /* Deixa o flex pai controlar a altura */
+        margin: 0 !important;
+        border-radius: 6px !important;
+        
+        /* Scroll Interno */
+        overflow-y: auto !important;
+        display: block !important;
+    }
+
+    /* 6. FOOTER (Fixo em baixo) */
+    .footer-text {
+        height: 25px !important;
+        flex-shrink: 0; /* Não deixa encolher */
+        font-size: 0.65rem !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #050510;
+        z-index: 50;
+        
+        /* Proteção para iPhone (barra de baixo) */
+        padding-bottom: env(safe-area-inset-bottom) !important; 
+        height: calc(25px + env(safe-area-inset-bottom)) !important; 
     }
 }
