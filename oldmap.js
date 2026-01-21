@@ -283,7 +283,7 @@ Highcharts.mapChart('container', {
         enableDoubleClickZoomTo: true,
         buttonOptions: {
             verticalAlign: 'top',
-            align: 'left',
+            align: 'right',
             x: 15,
             y: 40,
             width: 20,  
