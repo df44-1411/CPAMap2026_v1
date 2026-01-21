@@ -282,7 +282,7 @@ var mapData = [
     "path": "M468,881C445,880,419,887,410,911,403,928,392,946,374,952,359,964,383,982,396,975,415,966,434,949,457,954,470,956,480,947,493,946,505,939,491,925,494,914,496,899,491,878,472,881L469,881z",
     "continent": "Old Map Legacy Lands",
     "type": "NORMAL",
-    "controller": "Army of Club Penguin"
+    "controller": "Penguins of Agartha"
   },
   {
     "id": "id35",
