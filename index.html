@@ -271,7 +271,7 @@
             setIframeSource('armyFrame', 'old_army_code.html'); // Old Army List
             
             // Update Header (Optional)
-            document.querySelector('.status-indicator').innerHTML = '<div class="status-dot" style="background:orange; box-shadow:0 0 10px orange;"></div> SYSTEMS ONLINE';
+            document.querySelector('.status-indicator-offline').innerHTML = '<span class="status-indicator"><div class="status-dot" style="background:orange; box-shadow:0 0 10px orange;"></div></span> SYSTEMS ONLINE';
         } else {
             // Set Tabs
             document.getElementById('tab-new').classList.add('active');
