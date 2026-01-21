@@ -1,4 +1,4 @@
-/* style.css - Modern CPA Map Design */
+/* style.css - Modern CPA Map Interface by df44*/
 :root {
     --bg-dark: #050510;
     --bg-mapp: #003d62;
@@ -302,61 +302,77 @@ body {
 /* --- Mobile Responsiveness --- */
 @media screen and (max-width: 768px) {
     
-    /* Global box-sizing fix for mobile elements */
+    /* 1. Global Reset & Box Sizing */
     * {
         box-sizing: border-box;
     }
 
-    body {
-        overflow-y: auto !important; 
-        height: auto !important;
-        display: block; /* Removes flex constraints so content flows naturally */
-    }
-    
-    .dashboard-container {
-        flex-direction: column;
-        padding: 10px; /* Reduced padding from 20px to give more space */
-        gap: 15px;     /* Consistent gap between Map and Sidebar */
+    /* 2. Bloquear scroll da página inteira */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden !important; 
     }
 
-    .map-wrapper, .sidebar {
-        flex: none;
-        width: 100% !important; /* Forces exact same width */
-        margin: 0 !important;   /* Removes any rogue margins */
-        border-radius: 8px;     /* Matches corners */
-    }
-
-    .map-wrapper {
-        height: 50vh; /* Adjust map height (50% of screen) */
-    }
-
-    .sidebar {
-        height: auto;
-        min-height: 400px; /* Ensures sidebar has enough height */
-    }
+    /* 3. Ajustar a Barra de Navegação */
     .top-nav {
-        padding: 0 10px; /* Minimal padding on sides */
-        height: 60px;    /* Slightly shorter header */
+        height: 60px;
+        padding: 0 10px;
+        flex-shrink: 0;
+        z-index: 10;
     }
 
     .logo-section h1 {
-        font-size: 1rem; /* Smaller Logo Text */
+        font-size: 1rem;
         letter-spacing: 0.5px;
-        white-space: nowrap; /* Prevents wrapping */
-    }
-
-    /* Adjust the "LIVE" badge position */
-    .logo-section h1 span {
-        font-size: 0.4em !important; 
-    }
-
-    .nav-links {
-        gap: 8px; /* Tighter gap between links */
+        white-space: nowrap;
     }
 
     .nav-links a {
-        font-size: 0.7rem; /* Smaller link text */
-        padding: 4px 6px;  /* Smaller touch targets */
-        letter-spacing: 0; /* Save space */
+        font-size: 0.7rem;
+        padding: 4px 6px;
+    }
+
+    /* 4. Container Principal com Padding e Gap */
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        height: calc(100dvh - 60px); 
+        padding: 10px !important; 
+        gap: 10px !important;     
+        margin: 0 !important;
+    }
+
+    /* 5. Mapa (Topo) */
+    .map-wrapper {
+        flex: none;
+        width: 100% !important;
+        height: 38%; 
+        margin: 0 !important;
+        border-radius: 8px !important; 
+        
+        /* BORDA AZUL AQUI TAMBÉM */
+        border: 1px solid var(--border-color) !important;
+        
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+    }
+
+    /* 6. Sidebar (Fundo) */
+    .sidebar {
+        flex: 1; 
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 8px !important;
+        
+        /* BORDA AZUL CORRIGIDA */
+        border: 1px solid var(--border-color) !important;
+        background: rgba(13, 17, 23, 0.95);
+        
+        /* Scroll interno */
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch;
     }
 }
