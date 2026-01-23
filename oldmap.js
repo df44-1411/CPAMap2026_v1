@@ -659,6 +659,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Crimson Sovereign"){
+        point.graphic.addClass('CS');
+    }
     if (point.controller === "Penguins of Agartha"){
         point.graphic.addClass('POA');
     }
