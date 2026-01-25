@@ -680,7 +680,7 @@ var mapData = [
     "controller": "Freeland",
     "hotspot": true,
     "underInvasion": true,
-    "attackerColor": "#e00007"
+    "attackerColor": "#202024"
   },
   {
     "id": "id82",
