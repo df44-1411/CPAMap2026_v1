@@ -684,7 +684,8 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Black Team",
     "hotspot": true,
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#e00007"
   },
   {
     "id": "id82",
