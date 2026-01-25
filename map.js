@@ -646,7 +646,6 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Blue Team",
-    "hotspot": true,
     "underInvasion": false
   },
   {
