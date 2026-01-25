@@ -306,6 +306,16 @@ body {
     to { stroke-width: 4px; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 1)); }
 }
 
+@keyframes invasionOverlay {
+    0% { fill-opacity: 1; }
+    50% { fill-opacity: 0.4; fill: var(--attacker-color) !important; }
+    100% { fill-opacity: 1; }
+}
+
+.invasion-flashing {
+    animation: invasionOverlay 2s infinite ease-in-out;
+}
+
 /* --- Mobile Responsiveness --- */
 @media screen and (max-width: 1024px) {
     
