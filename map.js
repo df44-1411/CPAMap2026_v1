@@ -1013,6 +1013,13 @@ function(chart) {
 	 if (point.hotspot === true) {
         point.graphic.addClass('hotspot-active');
     }
+	 if (point.underInvasion === true && point.attackerColor) {
+	    // Injeta a cor do atacante como uma variável CSS no elemento
+	    point.graphic.element.style.setProperty('--attacker-color', point.attackerColor);
+	    point.graphic.addClass('invasion-flashing');
+	} else {
+	    point.graphic.removeClass('invasion-flashing');
+	}
     
   });
 });
