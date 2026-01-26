@@ -757,7 +757,9 @@ var mapData = [
     "path": "M684,402C675,399,672,404,676,412C685,431,694,415,689,410C687,408,691,406,685,403Z",
     "continent": "Klondike Sea",
     "type": "CAPITAL",
-    "controller": "CPA Battleground"
+    "controller": "CPA Battleground",
+    "effect": "nuke-active",
+    "underInvasion": false
   }
 ];
 
