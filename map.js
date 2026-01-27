@@ -603,7 +603,6 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Green Team",
-    "hotspot": true,
     "underInvasion": false
   },
   {
