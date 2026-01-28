@@ -515,7 +515,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Green Team",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#0074ad"
   },
   {
     "id": "id62",
