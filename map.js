@@ -687,7 +687,8 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Red Team",
     "underInvasion": false,
-    "hotspot": true
+    "hotspot": true,
+    "effect": "nuke-active"
   },
   {
     "id": "id81",
