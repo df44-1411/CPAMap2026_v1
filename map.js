@@ -560,7 +560,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Blue Team",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#e00007"
   },
   {
     "id": "id67",
