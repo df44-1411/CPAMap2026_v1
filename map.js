@@ -692,7 +692,6 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Red Team",
     "underInvasion": false,
-    "hotspot": true,
     "effect": "nuke-active"
   },
   {
