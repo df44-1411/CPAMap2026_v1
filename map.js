@@ -772,7 +772,6 @@ var mapData = [
     "continent": "Klondike Sea",
     "type": "CAPITAL",
     "controller": "CPA Battleground",
-    "effect": "nuke-active",
     "underInvasion": false
   }
 ];
