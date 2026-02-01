@@ -523,7 +523,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Red Team",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "bomb-active"
   },
   {
     "id": "id63",
