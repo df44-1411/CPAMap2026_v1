@@ -406,7 +406,6 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Blue Team",
-    "effect": "bomb-active",
     "underInvasion": false
   },
   {
@@ -652,7 +651,6 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Blue Team",
-    "effect": "bomb-active",
     "underInvasion": false
   },
   {
