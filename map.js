@@ -754,7 +754,8 @@ var mapData = [
     "continent": "Klondike Sea",
     "type": "NORMAL",
     "controller": "Green Team",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#87d1ff"
   },
   {
     "id": "id88",
