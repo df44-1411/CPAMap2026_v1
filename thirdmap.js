@@ -1,4 +1,4 @@
-//CPA MAP - A PROJECT FOR CPA ORG
+//CPA MAP - A PROJECT FOR CPA ORG - WS Map
 
 //MAP DESIGN by Dino HIGHCHARTS DEVELOPMENT by df44 (Discord:.df44) (c) 2025-26 All Rights Reserved
 
