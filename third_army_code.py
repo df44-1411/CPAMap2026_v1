@@ -46,7 +46,7 @@ search_terms = {
     "Freeland" : "#666666"
 }
 
-with open('winterstormmap.js', 'r') as file:
+with open('thirdmmap.js', 'r') as file:
     content = file.read()
 
 # 1. Calculate and Sort using Regex
