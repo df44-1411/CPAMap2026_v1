@@ -18,7 +18,7 @@ search_terms = {
     "CPA Battleground": "#ff4d4d",
     "Club Penguin Army Judges": "#ff3366",
     "Templars": "#f1c40f",
-    "Army of Club Penguin": "#2b8b1f",
+    "Army of CP": "#2b8b1f",
     "Doritos of Club Penguin": "#ff6a13",
     "Special Weapons and Tactics": "#40ff40",
     "Help Force": "#000dff",
