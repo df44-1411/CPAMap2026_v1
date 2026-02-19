@@ -19,7 +19,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Special Weapons and Tactics",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#2b8b1f"
   },
   {
     "id": "id2",
