@@ -19,8 +19,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Army of CP",
-    "underInvasion": true,
-    "attackerColor": "#2b8b1f"
+    "underInvasion": false
   },
   {
     "id": "id2",
