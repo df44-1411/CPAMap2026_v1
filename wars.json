@@ -30,14 +30,15 @@
     "date": "Jan 19, 2026",
     "status": "Ended",
     "side_a": [
-      "Army of CP"
+      "Army of CP",
+      "Water Vikings"
     ],
     "side_b": [
       "Scarlet Republic",
       "Aliens"
     ],
     "ending_date": "Jan 21, 2026",
-    "winner": "Army of Club Penguin"
+    "winner": "Army of CP"
   },
   "White Troops vs Scarlet Republic": {
     "name": "White Troops vs Scarlet Republic",
