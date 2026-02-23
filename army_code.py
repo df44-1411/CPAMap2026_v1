@@ -39,7 +39,6 @@ search_terms = {
     "Void Troops": "#3d0eac",
     "Shadow Legionaries": "#2d0b7d",
     "Marines": "#46b8ff",
-    "Kanye West Army": "#853082",
     "Tsunamis of Club Penguin": "#0099cc",
     "Winged Hussars": "#ff3333",
     "Smart Penguins": "#ff6666",
