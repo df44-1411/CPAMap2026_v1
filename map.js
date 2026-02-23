@@ -1055,9 +1055,7 @@ function(chart) {
     if (point.controller === "Marines"){
     	point.graphic.addClass('MARINES');
     }
-    if (point.controller === "Kanye West Army"){
-    	point.graphic.addClass('YE');
-    }
+    
     if (point.controller === "Tsunamis of Club Penguin"){
     	point.graphic.addClass('TSUNAMIS');
     }
