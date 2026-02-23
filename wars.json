@@ -55,7 +55,7 @@
   "The Mammoth Expedition": {
     "name": "The Mammoth Expedition",
     "date": "February 19, 2026",
-    "status": "Ongoing Conflict",
+    "status": "Ended",
     "side_a": [
       "Army of CP"
     ],
@@ -63,6 +63,6 @@
       "Special Weapons and Tactics"
     ],
     "ending_date": null,
-    "winner": null
+    "winner": "Army of CP"
   }
 }
