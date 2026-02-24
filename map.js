@@ -366,7 +366,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#2b8b1f"
   },
   {
     "id": "id42",
