@@ -955,6 +955,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Phantom Republic of Club Penguin"){
+        point.graphic.addClass('PRCP');
+    }
     if (point.controller === "Fire Vikings"){
         point.graphic.addClass('FV');
     }
