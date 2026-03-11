@@ -712,7 +712,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "Teutons",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#FFFFFF"
   },
   {
     "id": "id81",
