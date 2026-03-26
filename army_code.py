@@ -4,7 +4,6 @@ import re
 search_terms = {
     "Dark Pirates of Club Penguin": "#810e0e",
     "Phantom Republic of Club Penguin": "#fddc5c",
-    "Zall of Club Penguin": "#f40bf8",
     "White Troops": "#ffffff",
     "Crimson Sovereign": "#ffde21",
     "Red Team": "#e00007",
