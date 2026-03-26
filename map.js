@@ -963,9 +963,7 @@ function(chart) {
     if (point.controller === "Zall of Club Penguin"){
         point.graphic.addClass('ZCP');
     }
-    if (point.controller === "Phoenix of Club Penguin"){
-        point.graphic.addClass('PCP');
-    }
+    
     if (point.controller === "White Troops"){
         point.graphic.addClass('WTCP');
     }
