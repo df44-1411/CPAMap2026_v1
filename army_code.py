@@ -21,7 +21,6 @@ search_terms = {
     "Templars": "#f1c40f",
     "Army of CP": "#2b8b1f",
     "Doritos of Club Penguin": "#ff6a13",
-    "Special Weapons and Tactics": "#40ff40",
     "Help Force": "#000dff",
     "Rebel Penguin Federation": "#060505",
     "Aliens": "#90ee90",
