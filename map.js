@@ -1029,9 +1029,7 @@ function(chart) {
     if (point.controller === "Elite Guardians of Club Penguin"){
     	point.graphic.addClass('EGCP');
     }
-    if (point.controller === "Special Weapons and Tactics"){
-    	point.graphic.addClass('SWAT');
-    }
+    
     
     if (point.controller === "Shreks of CP"){
     	point.graphic.addClass('SHREKS');
