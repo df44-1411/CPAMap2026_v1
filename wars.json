@@ -1,17 +1,4 @@
 {
-  "Siege of the Hollow Throne": {
-    "name": "Siege of the Hollow Throne",
-    "date": "Jan 11, 2026",
-    "status": "Suspended",
-    "side_a": [
-      "Templars"
-    ],
-    "side_b": [
-      "Void Troops"
-    ],
-    "ending_date": null,
-    "winner": null
-  },
   "White Troops vs Scarlet Republic": {
     "name": "White Troops vs Scarlet Republic",
     "date": "Jan 21, 2026",
