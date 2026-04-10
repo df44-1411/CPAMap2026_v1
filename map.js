@@ -103,7 +103,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Fire Vikings",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#2d0b7d"
   },
   {
     "id": "id12",
