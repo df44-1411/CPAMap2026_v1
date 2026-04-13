@@ -11,5 +11,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Operation: No Fireplace": {
+    "name": "Operation: No Fireplace",
+    "date": "April 10th, 2026",
+    "status": "Ongoing Conflict",
+    "side_a": [
+      "Shadow Legionaries"
+    ],
+    "side_b": [
+      "Fire Vikings"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
