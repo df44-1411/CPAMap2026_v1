@@ -105,8 +105,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Shadow Legionaries",
-    "underInvasion": true,
-    "attackerColor": "#8b0000"
+    "underInvasion": false
   },
   {
     "id": "id12",
