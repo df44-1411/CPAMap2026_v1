@@ -87,7 +87,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "The Abyssal Tide of Club Penguin",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#2d0b7d"
   },
   {
     "id": "id10",
