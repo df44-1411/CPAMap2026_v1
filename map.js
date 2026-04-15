@@ -526,8 +526,7 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Shadow Legionaries",
-    "underInvasion": true,
-    "attackerColor": "#8b0000"
+    "underInvasion": false
   },
   {
     "id": "id60",
