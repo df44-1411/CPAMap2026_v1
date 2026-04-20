@@ -592,7 +592,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "Rebel Penguin Federation",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "bomb-active"
   },
   {
     "id": "id67",
