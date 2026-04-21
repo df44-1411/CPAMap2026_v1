@@ -333,8 +333,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Templars",
-    "underInvasion": true,
-    "attackerColor": "#043acf"
+    "underInvasion": false
   },
   {
     "id": "id38",
