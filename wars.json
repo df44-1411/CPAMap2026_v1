@@ -2,15 +2,15 @@
   "War of the Tundropa Heresy": {
     "name": "War of the Tundropa Heresy",
     "date": "April 13th, 2026",
-    "status": "Declaration Issued",
+    "status": "Ended",
     "side_a": [
       "Templars"
     ],
     "side_b": [
       "Water Vikings"
     ],
-    "ending_date": null,
-    "winner": null
+    "ending_date": "April 21st, 2026",
+    "winner": "Templars"
   },
   "Operation: No Fireplace": {
     "name": "Operation: No Fireplace",
