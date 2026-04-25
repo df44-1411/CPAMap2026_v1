@@ -959,6 +959,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Businessmen of Club Penguin"){
+        point.graphic.addClass('BCP');
+    }
     if (point.controller === "The Abyssal Tide of Club Penguin"){
         point.graphic.addClass('ATCP');
     }
