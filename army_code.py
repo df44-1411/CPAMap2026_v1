@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Impostors of Club Penguin": "#e68a22",
     "SnowWalkers of Club Penguin": "#87f1ff",
     "Businessmen of Club Penguin": "#262525",
     "The Abyssal Tide of Club Penguin": "#4863a0",
