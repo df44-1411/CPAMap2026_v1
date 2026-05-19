@@ -709,7 +709,7 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Freeland",
     "underInvasion": true,
-    "attackerColor": "#262525"
+    "attackerColor": "#8b0000"
   },
   {
     "id": "id80",
