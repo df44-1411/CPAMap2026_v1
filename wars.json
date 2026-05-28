@@ -11,18 +11,5 @@
     ],
     "ending_date": "April 21st, 2026",
     "winner": "Water Vikings"
-  },
-  "Operation: No Fireplace": {
-    "name": "Operation: No Fireplace",
-    "date": "April 10th, 2026",
-    "status": "Suspended",
-    "side_a": [
-      "Shadow Legionaries"
-    ],
-    "side_b": [
-      "Fire Vikings"
-    ],
-    "ending_date": null,
-    "winner": null
   }
 }
