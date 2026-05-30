@@ -384,8 +384,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "SnowWalkers of Club Penguin",
-    "underInvasion": true,
-    "attackerColor": "#262525"
+    "underInvasion": false
   },
   {
     "id": "id43",
