@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Magma Clan": "#c92b1d",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
     "Impostors of Club Penguin": "#e68a22",
