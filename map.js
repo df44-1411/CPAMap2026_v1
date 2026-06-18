@@ -967,6 +967,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Dark Warriors"){
+        point.graphic.addClass('DW');
+    }
     if (point.controller === "Magma Clan"){
         point.graphic.addClass('MC');
     }
