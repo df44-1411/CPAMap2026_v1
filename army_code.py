@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Zenith Order": "#5c09e2",
     "Magma Clan": "#c92b1d",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
