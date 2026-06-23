@@ -968,6 +968,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Zenith Order"){
+        point.graphic.addClass('ZO');
+    }
     if (point.controller === "Dark Warriors"){
         point.graphic.addClass('DW');
     }
