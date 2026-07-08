@@ -1,0 +1,67 @@
+{
+  "Qualifiers": {
+    "1": {
+      "team_a": "Romans",
+      "team_b": "SnowWalkers of Club Penguin",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null,
+      "match_time": "2026-07-11T18:00:00+00:00"
+    }
+  },
+  "Quarter Finals": {
+    "2": {
+      "team_a": "Winner of Match 1",
+      "team_b": "Army of CP",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    },
+    "3": {
+      "team_a": "Dark Warriors",
+      "team_b": "Help Force",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    },
+    "4": {
+      "team_a": "Water Vikings",
+      "team_b": "Star Force",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    },
+    "5": {
+      "team_a": "Rebel Penguin Federation",
+      "team_b": "Pizzaioli of Club Penguin",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    }
+  },
+  "Semi Finals": {
+    "6": {
+      "team_a": "Winner of Match 2",
+      "team_b": "Winner of Match 3",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    },
+    "7": {
+      "team_a": "Winner of Match 4",
+      "team_b": "Winner of Match 5",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    }
+  },
+  "Championship": {
+    "8": {
+      "team_a": "Winner of Match 6",
+      "team_b": "Winner of Match 7",
+      "score": "0-0-0",
+      "status": "Pending",
+      "winner": null
+    }
+  }
+}
