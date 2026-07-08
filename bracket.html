@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legends Cup Bracket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "BurbankSmall";
+            font-display: swap;
+            font-weight: 800;
+            src: url(https://cparmies.org/wp-content/themes/Penguin/assets/fonts/BurbankSmall-Black.otf) format("OpenType");
+        }
+        @font-face {
+            font-family: "BurbankSmall";
+            font-display: swap;
+            font-weight: 700;
+            src: url(https://cparmies.org/wp-content/themes/Penguin/assets/fonts/BurbankSmall-Bold.otf) format("OpenType");
+        }
+        @font-face {
+            font-family: "BurbankSmall";
+            font-display: swap;
+            font-weight: 500;
+            src: url(https://cparmies.org/wp-content/themes/Penguin/assets/fonts/BurbankSmall-Medium.otf) format("OpenType");
+        }
+        @font-face {
+            font-family: "BurbankSmall";
+            font-display: swap;
+            font-weight: 300;
+            src: url(https://cparmies.org/wp-content/themes/Penguin/assets/fonts/BurbankSmall-Light.otf) format("OpenType");
+        }
+        /** Akira **/
+        @font-face {
+            font-family: 'Akira Expanded';
+            src: url('https://cparmies.org/wp-content/themes/Penguin/assets/fonts/AkiraExpanded-SuperBold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+        :root {
+            --gold-primary: #b49155;
+            --gold-dark: #8c6726;
+            --bg-dark: #7a4f18;
+            --bg-mid: #8c6726;
+            --bg-light: #e8cd86;
+            --text-light: #ffffff;
+            --text-muted: #d0c9b8;
+            --border-color: #b49155;
+            --frame-color: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: var(--frame-color);
+            font-family: 'BurbankSmall', sans-serif;
+            color: var(--text-light);
+        }
+
+        .bracket-wrapper {
+            position: absolute;
+            inset: 0;
+            padding: 10px;
+            border: 8px solid var(--frame-color);
+            display: flex;
+            flex-direction: column;
+            z-index: 5;
+            overflow: hidden;
+            background: linear-gradient(to bottom, var(--bg-mid) 0%, #d8b25a 45%, var(--bg-light) 100%);
+        }
+
+        .watermark-container {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            width: min(180vh, 180vw);
+            height: min(180vh, 180vw);
+            max-width: 1200px;
+            max-height: 1200px;
+            background: url('assets/cpalclogo.png') no-repeat center center;
+            background-size: cover;
+            opacity: 0.08;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .legends-watermark {
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            font-family: 'Akira Expanded', sans-serif;
+            font-size: clamp(48px, 12vw, 100px);
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: transparent;
+            -webkit-text-stroke: 3px rgba(255,255,255,0.09);
+            text-stroke: 3px rgba(255,255,255,0.09);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .tournament-header {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            z-index: 6;
+        }
+
+        .tournament-logo {
+            width: 16vw;
+            max-width: 420px;
+            min-width: 160px;
+            height: auto;
+            display: block;
+        }
+
+        .bracket-tree {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex: 1 1 auto;
+            width: 100%;
+            gap: 10px;
+            position: relative;
+            z-index: 3;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 6px 6px;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .bracket-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: auto;
+            flex: 1 1 clamp(220px, 24vw, 340px);
+            min-width: 200px;
+            max-width: 340px;
+            gap: 10px;
+        }
+
+        .column-title {
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            font-family: 'Akira Expanded', sans-serif;
+            font-weight: bold;
+            padding: 4px 0;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+        .match-card {
+            background: rgba(180, 140, 70, 0.97);
+            background-color: rgba(180, 140, 70, 0.97);
+            border: 3px solid var(--border-color);
+            border-radius: 2px;
+            padding: 10px 12px;
+            width: 100%;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.42);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+            min-width: 0;
+            position: relative;
+            z-index: 4;
+            overflow: visible;
+            min-height: auto;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .match-card:active {
+            transform: scale(0.98);
+        }
+
+        .match-card.live,
+        .match-card.pending,
+        .match-card.completed,
+        .match-card.postponed {
+            background: rgba(100, 80, 60, 0.96);
+            background-color: rgba(100, 80, 60, 0.96);
+        }
+
+        .status-label {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .match-card.live .status-label {
+            color: #a6ffb7;
+            text-shadow: 0 0 14px rgba(95,201,115,0.75);
+        }
+
+        .match-card.pending .status-label {
+            color: #ffd76a;
+            text-shadow: 0 0 16px rgba(255,179,71,0.65);
+        }
+
+        .match-card.completed .status-label {
+            color: #ff7f7f;
+            text-shadow: none;
+        }
+
+        .match-card.postponed .status-label {
+            color: #d39bff;
+            text-shadow: none;
+        }
+
+        .match-card.live {
+            border-color: #5fc973;
+        }
+
+        .match-card.pending {
+            border-color: #ffb347;
+        }
+
+        .match-card.completed {
+            border-color: #c0392b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+        }
+
+        .match-card.postponed {
+            border-color: #8e44ad;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+        }
+
+        .match-card:hover {
+            transform: translateY(-3px) scale(1.01);
+            border-color: #ffd36a;
+            background: rgba(80, 66, 48, 0.98);
+        }
+
+        .match-card.live:hover {
+            box-shadow: 0 10px 30px rgba(95,201,115,0.45);
+            border-color: #5fc973;
+        }
+
+        .match-card.pending:hover {
+            box-shadow: 0 10px 30px rgba(255,179,71,0.45);
+            border-color: #ffb347;
+        }
+
+        .match-card.completed:hover,
+        .match-card.postponed:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+        }
+
+        .match-id-header {
+            font-family: 'BurbankSmall', sans-serif;
+            font-size: 0.7em;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4px;
+        }
+
+        .match-id-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .match-time-inline {
+            color: var(--text-light);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .match-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .team-row, .vs-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto;
+            font-size: 0.82em;
+            padding: 1px 0;
+        }
+
+        .vs-label {
+            color: var(--text-muted);
+            font-size: 0.78em;
+            font-style: italic;
+            padding: 0 6px;
+        }
+
+        .score-num {
+            font-family: 'BurbankSmall', sans-serif;
+            font-weight: 700;
+            font-size: 0.92em;
+            color: var(--text-light);
+            min-width: 20px;
+            text-align: right;
+        }
+
+        .team-row.winner .team-name {
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        .team-name {
+            font-family: 'BurbankSmall', sans-serif;
+            font-weight: 700;
+            white-space: normal;
+            word-break: break-word;
+            overflow: visible;
+            text-overflow: clip;
+            max-width: none;
+            flex: 1;
+            display: block;
+            font-size: 0.95em;
+        }
+
+        .match-time-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 0.80em;
+            color: var(--text-muted);
+        }
+
+        .match-time-label {
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .match-time {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .bracket-credits {
+            text-align: left;
+            font-size: 0.72em;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+            padding: 0;
+            border-top: none;
+            position: relative;
+            z-index: 10;
+        }
+
+        @media (max-width: 900px) {
+            html, body {
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .bracket-wrapper {
+                position: relative;
+                min-height: 100vh;
+                min-height: 100dvh;
+                overflow: visible;
+            }
+
+            .bracket-tree {
+                flex-direction: column;
+                gap: 10px;
+                padding: 8px;
+                overflow-y: visible;
+                justify-content: flex-start;
+            }
+
+            .bracket-column {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .match-card {
+                padding: 7px 8px;
+            }
+
+            .legends-watermark {
+                font-size: 60px;
+                top: 8%;
+            }
+
+            .tournament-logo {
+                width: 36vw;
+                max-width: 320px;
+                min-width: 140px;
+            }
+
+            .watermark-container {
+                width: 60vw;
+                height: 60vw;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .bracket-wrapper {
+                padding: 8px;
+            }
+
+            .tournament-logo {
+                width: 26vw;
+                max-width: 220px;
+                min-width: 120px;
+            }
+
+            .legends-watermark {
+                font-size: 60px;
+                top: 8px;
+            }
+
+            .column-title {
+                font-size: 0.88em;
+            }
+
+            .match-card {
+                padding: 8px 10px;
+            }
+
+            .match-id-header {
+                font-size: 0.72em;
+            }
+
+            .team-row, .vs-row {
+                font-size: 0.78em;
+            }
+
+            .team-name {
+                font-size: 0.86em;
+            }
+
+            .score-num {
+                font-size: 0.88em;
+            }
+
+            .match-time-inline {
+                max-width: none;
+            }
+
+            .watermark-container {
+                max-width: none;
+                max-height: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .bracket-tree {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .bracket-column {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            .legends-watermark {
+                font-size: 54px;
+            }
+
+            .match-time-inline {
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .bracket-wrapper {
+                padding: 4px;
+                border-width: 4px;
+            }
+
+            .tournament-logo {
+                width: 40vw;
+                max-width: 160px;
+                min-width: 100px;
+            }
+
+            .legends-watermark {
+                font-size: 42px;
+                letter-spacing: 4px;
+                -webkit-text-stroke: 2px rgba(255,255,255,0.09);
+                text-stroke: 2px rgba(255,255,255,0.09);
+            }
+
+            .column-title {
+                font-size: 0.78em;
+                letter-spacing: 1px;
+            }
+
+            .match-card {
+                padding: 6px 6px;
+                border-width: 2px;
+            }
+
+            .match-id-header {
+                font-size: 0.62em;
+                gap: 4px;
+            }
+
+            .match-id-meta {
+                gap: 4px;
+            }
+
+            .match-time-inline {
+                max-width: none;
+                font-size: 0.9em;
+            }
+
+            .team-row, .vs-row {
+                font-size: 0.7em;
+            }
+
+            .team-name {
+                font-size: 0.78em;
+            }
+
+            .score-num {
+                font-size: 0.8em;
+                min-width: 16px;
+            }
+
+            .bracket-column {
+                min-width: 0;
+                gap: 6px;
+            }
+
+            .bracket-tree {
+                gap: 6px;
+                padding: 4px;
+            }
+
+            .watermark-container {
+                max-width: none;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bracket-wrapper">
+        <div class="watermark-container"></div>
+        <div class="legends-watermark">LEGENDS</div>
+        <div class="tournament-header">
+            <img src="assets/lclogo.png" alt="Legends Cup" class="tournament-logo">
+        </div>
+
+        <div class="bracket-tree" id="bracket-tree">
+<div class="bracket-column" data-round="Qualifiers"><h2 class="column-title">Qualifiers</h2>
+            <div class="match-card pending" data-match-id="1">
+                <div class="match-id-header">
+                    <span>ID: #1</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="2026-07-11T18:00:00+00:00">2026-07-11T18:00:00+00:00</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #730000;">Romans</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #87f1ff;">SnowWalkers of Club Penguin</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            </div><div class="bracket-column" data-round="Quarter Finals"><h2 class="column-title">Quarter Finals</h2>
+            <div class="match-card pending" data-match-id="2">
+                <div class="match-id-header">
+                    <span>ID: #2</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 1</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #2b8b1f;">Army of CP</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="match-card pending" data-match-id="3">
+                <div class="match-id-header">
+                    <span>ID: #3</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #080808;">Dark Warriors</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #000dff;">Help Force</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="match-card pending" data-match-id="4">
+                <div class="match-id-header">
+                    <span>ID: #4</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #043acf;">Water Vikings</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #000050;">Star Force</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="match-card pending" data-match-id="5">
+                <div class="match-id-header">
+                    <span>ID: #5</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #060505;">Rebel Penguin Federation</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #FC7E00;">Pizzaioli of Club Penguin</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            </div><div class="bracket-column" data-round="Semi Finals"><h2 class="column-title">Semi Finals</h2>
+            <div class="match-card pending" data-match-id="6">
+                <div class="match-id-header">
+                    <span>ID: #6</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 2</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 3</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="match-card pending" data-match-id="7">
+                <div class="match-id-header">
+                    <span>ID: #7</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 4</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 5</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            </div><div class="bracket-column" data-round="Championship"><h2 class="column-title">Championship</h2>
+            <div class="match-card pending" data-match-id="8">
+                <div class="match-id-header">
+                    <span>ID: #8</span>
+                    <div class="match-id-meta">
+                        <time class="match-time-inline" datetime="">TBD</time>
+                        <span class="status-label">Pending</span>
+                    </div>
+                </div>
+                <div class="match-rows">
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 6</span>
+                        <span class="score-num">0</span>
+                    </div>
+                    <div class="vs-row">
+                        <span class="vs-label">vs</span>
+                        <span class="score-num tie">0</span>
+                    </div>
+                    <div class="team-row">
+                        <span class="team-name" style="color: #e0e6ed;">Winner of Match 7</span>
+                        <span class="score-num">0</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="bracket-credits">
+            <b>Bracket Design by MasterDS • Logo by Zambi • UI by df44</b>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("time.match-time-inline").forEach((el) => {
+                const raw = (el.getAttribute("datetime") || el.textContent || "").trim();
+                if (!raw || raw === "TBD") return;
+
+                let date = new Date(raw);
+                if (Number.isNaN(date.getTime())) {
+                    const num = Number(raw);
+                    if (!Number.isNaN(num)) {
+                        date = new Date(raw.length === 10 ? num * 1000 : num);
+                    }
+                }
+
+                if (Number.isNaN(date.getTime())) return;
+
+                el.textContent = date.toLocaleString(undefined, {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    timeZoneName: "short"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
