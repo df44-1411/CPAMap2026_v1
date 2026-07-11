@@ -3,15 +3,15 @@
     "1": {
       "team_a": "Romans",
       "team_b": "SnowWalkers of Club Penguin",
-      "score": "0-0-0",
-      "status": "Live",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Romans",
       "match_time": "2026-07-11T18:00:00+00:00"
     }
   },
   "Quarter Finals": {
     "2": {
-      "team_a": "Winner of Match 1",
+      "team_a": "Romans",
       "team_b": "Army of CP",
       "score": "0-0-0",
       "status": "Pending",
