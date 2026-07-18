@@ -13,7 +13,7 @@
     "2": {
       "team_a": "Romans",
       "team_b": "Army of CP",
-      "score": "1-0-0",
+      "score": "3-0-0",
       "status": "Completed",
       "winner": "Army of CP",
       "match_time": "2026-07-18T18:00:00+00:00"
@@ -46,7 +46,7 @@
   "Semi Finals": {
     "6": {
       "team_a": "Army of CP",
-      "team_b": "Winner of Match 3",
+      "team_b": "Army of CP",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null
