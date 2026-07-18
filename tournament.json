@@ -29,9 +29,9 @@
     "4": {
       "team_a": "Water Vikings",
       "team_b": "Star Force",
-      "score": "0-0-0",
-      "status": "Live",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Water Vikings",
       "match_time": "2026-07-18T19:00:00+00:00"
     },
     "5": {
@@ -52,7 +52,7 @@
       "winner": null
     },
     "7": {
-      "team_a": "Winner of Match 4",
+      "team_a": "Water Vikings",
       "team_b": "Winner of Match 5",
       "score": "0-0-0",
       "status": "Pending",
