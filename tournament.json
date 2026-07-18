@@ -37,9 +37,9 @@
     "5": {
       "team_a": "Rebel Penguin Federation",
       "team_b": "Pizzaioli of Club Penguin",
-      "score": "0-0-0",
-      "status": "Live",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Rebel Penguin Federation",
       "match_time": "2026-07-18T20:00:00+00:00"
     }
   },
@@ -53,7 +53,7 @@
     },
     "7": {
       "team_a": "Water Vikings",
-      "team_b": "Winner of Match 5",
+      "team_b": "Rebel Penguin Federation",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null
