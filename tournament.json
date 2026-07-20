@@ -49,7 +49,8 @@
       "team_b": "Help Force",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null
+      "winner": null,
+      "match_time": "2026-07-25T20:00:00+00:00"
     },
     "7": {
       "team_a": "Water Vikings",
