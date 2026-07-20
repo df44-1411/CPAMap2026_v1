@@ -57,7 +57,8 @@
       "team_b": "Rebel Penguin Federation",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null
+      "winner": null,
+      "match_time": "2026-07-26T20:00:00+00:00"
     }
   },
   "Championship": {
