@@ -67,7 +67,8 @@
       "team_b": "Winner of Match 7",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null
+      "winner": null,
+      "match_time": "2026-08-02T20:00:00+00:00"
     }
   }
 }
