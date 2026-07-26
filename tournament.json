@@ -57,14 +57,14 @@
       "team_b": "Rebel Penguin Federation",
       "score": "0-2-1",
       "status": "Completed",
-      "winner": null,
+      "winner": "Rebel Penguin Federation",
       "match_time": "2026-07-26T20:00:00+00:00"
     }
   },
   "Championship": {
     "8": {
       "team_a": "Army of CP",
-      "team_b": "Winner of Match 7",
+      "team_b": "Rebel Penguin Federation",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null,
