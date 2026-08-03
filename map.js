@@ -968,6 +968,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Masked Bandits"){
+        point.graphic.addClass('MB');
+    }
     if (point.controller === "Restricted Very Violent Disney-Abolished Snuggle Cats"){
         point.graphic.addClass('RVVDASC');
     }
