@@ -2,6 +2,7 @@ import operator
 import re
 
 search_terms = {
+    "Restricted Very Violent Disney-Abolished Snuggle Cats": "#aac7fe",
     "Zenith Order": "#5c09e2",
     "Magma Clan": "#c92b1d",
     "Steam Empire": "#dddddd",
