@@ -65,9 +65,9 @@
     "8": {
       "team_a": "Army of CP",
       "team_b": "Rebel Penguin Federation",
-      "score": "0-0-0",
-      "status": "Pending",
-      "winner": null,
+      "score": "2-2-1",
+      "status": "Completed",
+      "winner": "Army of CP",
       "match_time": "2026-08-02T20:00:00+00:00"
     }
   }
