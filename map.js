@@ -386,7 +386,7 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Freeland",
     "underInvasion": true,
-    "attackerColor": "#ff3366"
+    "attackerColor": "#2C2D2D"
   },
   {
     "id": "id43",
