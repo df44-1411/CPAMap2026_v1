@@ -1,36 +1,32 @@
 {
-  "Qualifiers": {
+  "Quarter Finals": {
     "1": {
-      "team_a": "Army 1",
-      "team_b": "Army 2",
+      "team_a": "Shadow Legionaries",
+      "team_b": "The Abyssal Tide of Club Penguin",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     },
     "2": {
-      "team_a": "Army 3",
-      "team_b": "Army 4",
+      "team_a": "Fire Warriors",
+      "team_b": "Star Force",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     },
     "3": {
-      "team_a": "Army 5",
-      "team_b": "Army 6",
+      "team_a": "Masked Bandits",
+      "team_b": "Magicians of Club Penguin",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     },
     "4": {
-      "team_a": "Army 7",
-      "team_b": "Army 8",
+      "team_a": "SnowWalkers of Club Penguin",
+      "team_b": "Fire Vikings",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     }
   },
   "Semi Finals": {
@@ -39,26 +35,23 @@
       "team_b": "Winner of Match 2",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     },
-    "7": {
+    "6": {
       "team_a": "Winner of Match 3",
       "team_b": "Winner of Match 4",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     }
   },
-  "Grand Final": {
-    "8": {
+  "Championship": {
+    "7": {
       "team_a": "Winner of Match 5",
       "team_b": "Winner of Match 6",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null,
-      "match_time": "TBD"
+      "winner": null
     }
   }
 }
