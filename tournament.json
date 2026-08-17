@@ -20,7 +20,8 @@
       "team_b": "Magicians of Club Penguin",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null
+      "winner": null,
+      "match_time": "2026-08-23T18:00:00+00:00"
     },
     "4": {
       "team_a": "SnowWalkers of Club Penguin",
