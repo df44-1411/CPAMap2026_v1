@@ -3,9 +3,9 @@
     "1": {
       "team_a": "Shadow Legionaries",
       "team_b": "The Abyssal Tide of Club Penguin",
-      "score": "0-0-0",
-      "status": "Live",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Shadow Legionaries",
       "match_time": "2026-08-22T18:00:00+00:00"
     },
     "2": {
@@ -35,7 +35,7 @@
   },
   "Semi Finals": {
     "5": {
-      "team_a": "Winner of Match 1",
+      "team_a": "Shadow Legionaries",
       "team_b": "Winner of Match 2",
       "score": "0-0-0",
       "status": "Pending",
