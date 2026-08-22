@@ -11,9 +11,9 @@
     "2": {
       "team_a": "Fire Warriors",
       "team_b": "Star Force",
-      "score": "0-0-0",
-      "status": "Pending",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Fire Warriors",
       "match_time": "2026-08-22T20:00:00+00:00"
     },
     "3": {
@@ -36,7 +36,7 @@
   "Semi Finals": {
     "5": {
       "team_a": "Shadow Legionaries",
-      "team_b": "Winner of Match 2",
+      "team_b": "Fire Warriors",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null
