@@ -39,7 +39,8 @@
       "team_b": "Fire Warriors",
       "score": "0-0-0",
       "status": "Pending",
-      "winner": null
+      "winner": null,
+      "match_time": "2026-08-26T17:00:00+00:00"
     },
     "6": {
       "team_a": "Masked Bandits",
