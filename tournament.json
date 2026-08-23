@@ -27,9 +27,9 @@
     "4": {
       "team_a": "SnowWalkers of Club Penguin",
       "team_b": "Fire Vikings",
-      "score": "0-0-0",
-      "status": "Pending",
-      "winner": null,
+      "score": "1-0-2",
+      "status": "Completed",
+      "winner": "Fire Vikings",
       "match_time": "2026-08-23T20:00:00+00:00"
     }
   },
@@ -43,7 +43,7 @@
     },
     "6": {
       "team_a": "Masked Bandits",
-      "team_b": "Winner of Match 4",
+      "team_b": "Fire Vikings",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null
