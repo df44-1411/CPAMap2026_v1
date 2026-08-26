@@ -37,9 +37,9 @@
     "5": {
       "team_a": "Shadow Legionaries",
       "team_b": "Fire Warriors",
-      "score": "0-0-0",
-      "status": "Pending",
-      "winner": null,
+      "score": "2-0-1",
+      "status": "Completed",
+      "winner": "Shadow Legionaries",
       "match_time": "2026-08-26T17:00:00+00:00"
     },
     "6": {
@@ -53,7 +53,7 @@
   },
   "Championship": {
     "7": {
-      "team_a": "Winner of Match 5",
+      "team_a": "Shadow Legionaries",
       "team_b": "Winner of Match 6",
       "score": "0-0-0",
       "status": "Pending",
