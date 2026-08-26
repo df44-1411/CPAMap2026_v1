@@ -45,16 +45,16 @@
     "6": {
       "team_a": "Masked Bandits",
       "team_b": "Fire Vikings",
-      "score": "0-0-0",
-      "status": "Live",
-      "winner": null,
+      "score": "3-0-0",
+      "status": "Completed",
+      "winner": "Masked Bandits",
       "match_time": "2026-08-26T19:00:00+00:00"
     }
   },
   "Championship": {
     "7": {
       "team_a": "Shadow Legionaries",
-      "team_b": "Winner of Match 6",
+      "team_b": "Masked Bandits",
       "score": "0-0-0",
       "status": "Pending",
       "winner": null
