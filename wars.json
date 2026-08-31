@@ -1,1 +1,15 @@
-{}
+{
+  "Operation: Pizza Heist": {
+    "name": "Operation: Pizza Heist",
+    "date": "Aug, 31st",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Masked Bandits"
+    ],
+    "side_b": [
+      "Pizzaioli of Club Penguin"
+    ],
+    "ending_date": null,
+    "winner": null
+  }
+}
