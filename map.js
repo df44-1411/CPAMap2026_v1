@@ -605,8 +605,7 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "Rebel Penguin Federation",
-    "underInvasion": true,
-    "attackerColor": "#0c0c96"
+    "underInvasion": false
   },
   {
     "id": "id67",
