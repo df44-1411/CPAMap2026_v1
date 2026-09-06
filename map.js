@@ -976,6 +976,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Cult of Tung"){
+        point.graphic.addClass('CoT');
+    }
     if (point.controller === "United Republic"){
         point.graphic.addClass('UR');
     }
