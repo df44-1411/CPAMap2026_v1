@@ -800,7 +800,8 @@ var mapData = [
     "continent": "Klondike Sea",
     "type": "CAPITAL",
     "controller": "Green Team",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "nuke-active"
   },
   {
     "id": "id88",
