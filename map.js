@@ -1006,9 +1006,7 @@ function(chart) {
     if (point.controller === "Masked Bandits"){
         point.graphic.addClass('MB');
     }
-    if (point.controller === "Restricted Very Violent Disney-Abolished Snuggle Cats"){
-        point.graphic.addClass('RVVDASC');
-    }
+    
     
     if (point.controller === "Dark Warriors"){
         point.graphic.addClass('DW');
