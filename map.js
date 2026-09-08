@@ -1024,9 +1024,7 @@ function(chart) {
     if (point.controller === "SnowWalkers of Club Penguin"){
         point.graphic.addClass('SWCP');
     }
-    if (point.controller === "Businessmen of Club Penguin"){
-        point.graphic.addClass('BCP');
-    }
+    
     if (point.controller === "The Abyssal Tide of Club Penguin"){
         point.graphic.addClass('ATCP');
     }
