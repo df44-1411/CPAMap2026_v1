@@ -1009,9 +1009,7 @@ function(chart) {
     if (point.controller === "Restricted Very Violent Disney-Abolished Snuggle Cats"){
         point.graphic.addClass('RVVDASC');
     }
-    if (point.controller === "Zenith Order"){
-        point.graphic.addClass('ZO');
-    }
+    
     if (point.controller === "Dark Warriors"){
         point.graphic.addClass('DW');
     }
