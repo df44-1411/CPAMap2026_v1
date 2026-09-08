@@ -1026,9 +1026,7 @@ function(chart) {
     }
     
     
-    if (point.controller === "Dark Pirates of Club Penguin"){
-        point.graphic.addClass('DPCP');
-    }
+    
     if (point.controller === "Phantom Republic of Club Penguin"){
         point.graphic.addClass('PRCP');
     }
