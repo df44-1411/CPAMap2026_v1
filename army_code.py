@@ -9,7 +9,6 @@ search_terms = {
     "Fire Warriors": "#B22222",
     "Greater Warriors": "#FFC72C",
     "Masked Bandits": "#2C2D2D",
-    "Restricted Very Violent Disney-Abolished Snuggle Cats": "#aac7fe",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
     "Impostors of Club Penguin": "#e68a22",
