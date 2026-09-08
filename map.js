@@ -281,7 +281,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Water Vikings",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#FFC72C"
   },
   {
     "id": "id31",
