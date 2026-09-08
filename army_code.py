@@ -42,7 +42,6 @@ search_terms = {
     "Elite Guardians of CP": "#787e7f", 
     "Star Force": "#000050",
     "Dark Warriors": "#080808",
-    "Shreks of CP": "#b0c400",
     "Peoples Imperial Confederation": "#aa54ff",
     "wii phone": "#ffffff",
     "Romans": "#730000",
