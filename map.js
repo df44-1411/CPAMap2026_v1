@@ -1025,9 +1025,7 @@ function(chart) {
         point.graphic.addClass('SWCP');
     }
     
-    if (point.controller === "The Abyssal Tide of Club Penguin"){
-        point.graphic.addClass('ATCP');
-    }
+    
     if (point.controller === "Dark Pirates of Club Penguin"){
         point.graphic.addClass('DPCP');
     }
