@@ -10,7 +10,6 @@ search_terms = {
     "Greater Warriors": "#FFC72C",
     "Masked Bandits": "#2C2D2D",
     "Restricted Very Violent Disney-Abolished Snuggle Cats": "#aac7fe",
-    "Zenith Order": "#5c09e2",
     "Magma Clan": "#c92b1d",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
