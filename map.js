@@ -1013,9 +1013,7 @@ function(chart) {
     if (point.controller === "Dark Warriors"){
         point.graphic.addClass('DW');
     }
-    if (point.controller === "Magma Clan"){
-        point.graphic.addClass('MC');
-    }
+    
     if (point.controller === "Steam Empire"){
         point.graphic.addClass('StE');
     }
