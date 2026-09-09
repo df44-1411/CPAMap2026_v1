@@ -1040,9 +1040,7 @@ function(chart) {
     if (point.controller === "White Troops"){
         point.graphic.addClass('WTCP');
     }
-    if (point.controller === "Crimson Sovereign"){
-        point.graphic.addClass('CS');
-    }
+    
     
     if (point.controller === "Red Team"){
         point.graphic.addClass('OPWSRT');
