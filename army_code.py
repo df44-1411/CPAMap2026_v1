@@ -15,7 +15,6 @@ search_terms = {
     "Impostors of Club Penguin": "#e68a22",
     "SnowWalkers of Club Penguin": "#87f1ff",
     "White Troops": "#ffffff",
-    "Crimson Sovereign": "#ffde21",
     "Red Team": "#e00007",
     "Green Team": "#02990e",
     "Blue Team": "#0074ad",
