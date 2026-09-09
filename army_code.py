@@ -14,7 +14,6 @@ search_terms = {
     "Pizzaioli of Club Penguin": "#FC7E00",
     "Impostors of Club Penguin": "#e68a22",
     "SnowWalkers of Club Penguin": "#87f1ff",
-    "Phantom Republic of Club Penguin": "#fddc5c",
     "White Troops": "#ffffff",
     "Crimson Sovereign": "#ffde21",
     "Red Team": "#e00007",
