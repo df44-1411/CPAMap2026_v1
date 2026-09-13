@@ -442,7 +442,7 @@ var mapData = [
     "name": "Down Under",
     "path": "M864,379L856,379L854,382C847,386,846,384,838,383C835,384,832,383,826,383C826,383,820,382,814,378C807,375,807,371,807,364L807,359L807,350L858,350C858,350,868,364,864,379",
     "continent": "Tundropa",
-    "type": "NORMAL",
+    "type": "CAPITAL",
     "controller": "Templars",
     "underInvasion": false
   },
