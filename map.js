@@ -353,7 +353,6 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Dark Warriors",
-    "hotspot": true,
     "underInvasion": false
   },
   {
@@ -663,7 +662,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id73",
@@ -727,8 +727,7 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false,
-    "hotspot": true
+    "underInvasion": false
   },
   {
     "id": "id80",
@@ -737,7 +736,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id81",
