@@ -11,5 +11,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Exterminatio Sanguisugarum": {
+    "name": "Exterminatio Sanguisugarum",
+    "date": "9/14/2026",
+    "status": "Ongoing Conflict",
+    "side_a": [
+      "Templars"
+    ],
+    "side_b": [
+      "Dark Warriors"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
