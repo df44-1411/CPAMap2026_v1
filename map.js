@@ -74,7 +74,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Masked Bandits",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#2d0b7d"
   },
   {
     "id": "id8",
