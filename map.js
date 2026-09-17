@@ -389,7 +389,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Masked Bandits",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "nuke-active"
   },
   {
     "id": "id43",
