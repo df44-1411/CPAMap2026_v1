@@ -29,8 +29,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Dark Warriors",
-    "underInvasion": true,
-    "attackerColor": "#f1c40f"
+    "underInvasion": false
   },
   {
     "id": "id3",
