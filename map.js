@@ -190,7 +190,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Boxmen of Boxland",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#000dff"
   },
   {
     "id": "id21",
