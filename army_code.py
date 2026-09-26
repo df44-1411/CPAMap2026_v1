@@ -7,7 +7,6 @@ search_terms = {
     "Zara Larmy": "#ED018C",
     "Cult of Tung": "#A52A2A",
     "United Republic": "#0c0c96",
-    "Pontian Warriors": "#fbd601",
     "Fire Warriors": "#B22222",
     "Greater Warriors": "#FFC72C",
     "Masked Bandits": "#2C2D2D",
