@@ -990,9 +990,7 @@ function(chart) {
         point.graphic.addClass('ZL');
     }
     
-    if (point.controller === "United Republic"){
-        point.graphic.addClass('UR');
-    }
+    
     
     if (point.controller === "Fire Warriors"){
         point.graphic.addClass('FW');
