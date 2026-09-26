@@ -6,7 +6,6 @@ search_terms = {
     "Boxmen of Boxland": "#B1914B",
     "Zara Larmy": "#ED018C",
     "Fire Warriors": "#B22222",
-    "Greater Warriors": "#FFC72C",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
     "Impostors of Club Penguin": "#e68a22",
