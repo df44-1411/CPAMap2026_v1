@@ -980,6 +980,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "Black Ops HQ"){
+        point.graphic.addClass('BOHQ');
+    }
     if (point.controller === "Boxmen of Boxland"){
         point.graphic.addClass('BoB');
     }
