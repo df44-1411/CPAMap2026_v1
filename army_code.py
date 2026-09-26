@@ -5,7 +5,6 @@ search_terms = {
     "Black Ops HQ": "#080808",
     "Boxmen of Boxland": "#B1914B",
     "Zara Larmy": "#ED018C",
-    "Cult of Tung": "#A52A2A",
     "United Republic": "#0c0c96",
     "Fire Warriors": "#B22222",
     "Greater Warriors": "#FFC72C",
