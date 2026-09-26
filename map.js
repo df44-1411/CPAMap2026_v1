@@ -995,9 +995,7 @@ function(chart) {
     if (point.controller === "United Republic"){
         point.graphic.addClass('UR');
     }
-    if (point.controller === "Pontian Warriors"){
-        point.graphic.addClass('PW');
-    }
+    
     if (point.controller === "Fire Warriors"){
         point.graphic.addClass('FW');
     }
