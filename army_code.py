@@ -8,7 +8,6 @@ search_terms = {
     "United Republic": "#0c0c96",
     "Fire Warriors": "#B22222",
     "Greater Warriors": "#FFC72C",
-    "Masked Bandits": "#2C2D2D",
     "Steam Empire": "#dddddd",
     "Pizzaioli of Club Penguin": "#FC7E00",
     "Impostors of Club Penguin": "#e68a22",
