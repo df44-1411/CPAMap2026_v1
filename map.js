@@ -989,9 +989,7 @@ function(chart) {
     if (point.controller === "Zara Larmy"){
         point.graphic.addClass('ZL');
     }
-    if (point.controller === "Cult of Tung"){
-        point.graphic.addClass('CoT');
-    }
+    
     if (point.controller === "United Republic"){
         point.graphic.addClass('UR');
     }
