@@ -995,9 +995,7 @@ function(chart) {
     if (point.controller === "Fire Warriors"){
         point.graphic.addClass('FW');
     }
-    if (point.controller === "Greater Warriors"){
-        point.graphic.addClass('GW');
-    }
+    
     
     
     
