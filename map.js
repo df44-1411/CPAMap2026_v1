@@ -1000,9 +1000,7 @@ function(chart) {
     if (point.controller === "Greater Warriors"){
         point.graphic.addClass('GW');
     }
-    if (point.controller === "Masked Bandits"){
-        point.graphic.addClass('MB');
-    }
+    
     
     
     if (point.controller === "Dark Warriors"){
