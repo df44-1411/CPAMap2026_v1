@@ -57,7 +57,7 @@ var mapData = [
     "type": "CAPITAL",
     "controller": "Star Force",
     "underInvasion": true,
-    "attackerColor": "#FFC72C"
+    "attackerColor": "#FFFFFF"
   },
   {
     "id": "id6",
