@@ -56,8 +56,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Star Force",
-    "underInvasion": true,
-    "attackerColor": "#FFFFFF"
+    "underInvasion": false
   },
   {
     "id": "id6",
