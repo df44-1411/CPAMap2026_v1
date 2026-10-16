@@ -796,8 +796,7 @@ var mapData = [
     "continent": "Klondike Sea",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false,
-    "effect": "nuke-active"
+    "underInvasion": false
   },
   {
     "id": "id88",
