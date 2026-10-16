@@ -390,8 +390,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Dark Warriors",
-    "underInvasion": false,
-    "effect": "nuke-active"
+    "underInvasion": false
   },
   {
     "id": "id43",
