@@ -145,7 +145,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id16",
@@ -424,7 +425,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id47",
@@ -568,7 +570,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id63",
