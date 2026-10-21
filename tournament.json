@@ -1,0 +1,75 @@
+{
+  "Major Grand Final": {
+    "1": {
+      "team_a": "Army of Club Penguin",
+      "team_b": "Help Force",
+      "team_c": "Water Vikings",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-24T19:00:00+00:00",
+      "rooms": 5,
+      "format": "3-Way Battle"
+    }
+  },
+  "S/M Quarter Finals": {
+    "2": {
+      "team_a": "SnowWalkers of Club Penguin",
+      "team_b": "Scarlet Republic",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-25T13:00:00+00:00",
+      "advances_to": {
+        "round": "S/M Semi Finals",
+        "match": "4",
+        "slot": "team_b"
+      }
+    },
+    "3": {
+      "team_a": "Star Force",
+      "team_b": "Pizzaioli of Club Penguin",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-25T14:00:00+00:00",
+      "advances_to": {
+        "round": "S/M Semi Finals",
+        "match": "5",
+        "slot": "team_b"
+      }
+    }
+  },
+  "S/M Semi Finals": {
+    "4": {
+      "team_a": "Shadow Legionaries",
+      "team_b": "Winner of Battle 2",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-25T17:00:00+00:00",
+      "advances_to": {
+        "round": "S/M Grand Final",
+        "match": "6",
+        "slot": "team_a"
+      }
+    },
+    "5": {
+      "team_a": "Fire Vikings",
+      "team_b": "Winner of Battle 3",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-25T19:00:00+00:00",
+      "advances_to": {
+        "round": "S/M Grand Final",
+        "match": "6",
+        "slot": "team_b"
+      }
+    }
+  },
+  "S/M Grand Final": {
+    "6": {
+      "team_a": "Winner of Battle 4",
+      "team_b": "Winner of Battle 5",
+      "score": "0-0-0",
+      "status": "Pending",
+      "match_time": "2026-10-25T23:00:00+00:00"
+    }
+  }
+}
