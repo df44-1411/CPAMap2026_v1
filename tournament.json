@@ -4,11 +4,12 @@
       "team_a": "Army of CP",
       "team_b": "Help Force",
       "team_c": "Water Vikings",
-      "score": "0-0-0",
-      "status": "Pending",
+      "score": "5-0-0",
+      "status": "Completed",
       "match_time": "2026-10-24T19:00:00+00:00",
       "rooms": 5,
-      "format": "3-Way Battle"
+      "format": "3-Way Battle",
+      "winner": "Army of CP"
     }
   },
   "S/M Quarter Finals": {
