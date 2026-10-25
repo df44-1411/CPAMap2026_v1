@@ -16,14 +16,15 @@
     "2": {
       "team_a": "SnowWalkers of Club Penguin",
       "team_b": "Scarlet Republic",
-      "score": "0-0-0",
-      "status": "Live",
+      "score": "2-1-0",
+      "status": "Completed",
       "match_time": "2026-10-25T13:00:00+00:00",
       "advances_to": {
         "round": "S/M Semi Finals",
         "match": "4",
         "slot": "team_b"
-      }
+      },
+      "winner": "SnowWalkers of Club Penguin"
     },
     "3": {
       "team_a": "Star Force",
@@ -41,7 +42,7 @@
   "S/M Semi Finals": {
     "4": {
       "team_a": "Shadow Legionaries",
-      "team_b": "Winner of Battle 2",
+      "team_b": "SnowWalkers of Club Penguin",
       "score": "0-0-0",
       "status": "Pending",
       "match_time": "2026-10-25T17:00:00+00:00",
