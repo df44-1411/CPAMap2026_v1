@@ -44,14 +44,15 @@
     "4": {
       "team_a": "Shadow Legionaries",
       "team_b": "SnowWalkers of Club Penguin",
-      "score": "0-0-0",
-      "status": "Pending",
+      "score": "3-0-0",
+      "status": "Completed",
       "match_time": "2026-10-25T17:00:00+00:00",
       "advances_to": {
         "round": "S/M Grand Final",
         "match": "6",
         "slot": "team_a"
-      }
+      },
+      "winner": "Shadow Legionaries"
     },
     "5": {
       "team_a": "Fire Vikings",
@@ -69,7 +70,7 @@
   },
   "S/M Grand Final": {
     "6": {
-      "team_a": "Winner of Battle 4",
+      "team_a": "Shadow Legionaries",
       "team_b": "Fire Vikings",
       "score": "0-0-0",
       "status": "Pending",
