@@ -29,14 +29,15 @@
     "3": {
       "team_a": "Star Force",
       "team_b": "Pizzaioli of Club Penguin",
-      "score": "0-0-0",
-      "status": "Live",
+      "score": "3-0-0",
+      "status": "Completed",
       "match_time": "2026-10-25T14:00:00+00:00",
       "advances_to": {
         "round": "S/M Semi Finals",
         "match": "5",
         "slot": "team_b"
-      }
+      },
+      "winner": "Star Force"
     }
   },
   "S/M Semi Finals": {
@@ -54,7 +55,7 @@
     },
     "5": {
       "team_a": "Fire Vikings",
-      "team_b": "Winner of Battle 3",
+      "team_b": "Star Force",
       "score": "0-0-0",
       "status": "Pending",
       "match_time": "2026-10-25T19:00:00+00:00",
