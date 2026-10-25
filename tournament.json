@@ -63,13 +63,14 @@
         "round": "S/M Grand Final",
         "match": "6",
         "slot": "team_b"
-      }
+      },
+      "winner": "Fire Vikings"
     }
   },
   "S/M Grand Final": {
     "6": {
       "team_a": "Winner of Battle 4",
-      "team_b": "Winner of Battle 5",
+      "team_b": "Fire Vikings",
       "score": "0-0-0",
       "status": "Pending",
       "match_time": "2026-10-25T23:00:00+00:00"
