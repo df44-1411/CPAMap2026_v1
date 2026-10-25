@@ -56,8 +56,8 @@
     "5": {
       "team_a": "Fire Vikings",
       "team_b": "Star Force",
-      "score": "0-0-0",
-      "status": "Pending",
+      "score": "3-0-0",
+      "status": "Completed",
       "match_time": "2026-10-25T19:00:00+00:00",
       "advances_to": {
         "round": "S/M Grand Final",
