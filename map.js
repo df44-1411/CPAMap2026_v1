@@ -565,7 +565,7 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Shadow Legionaries",
     "underInvasion": true,
-    "attackerColor": "#8b0000"
+    "attackerColor": "#FFFFFF"
   },
   {
     "id": "id62",
