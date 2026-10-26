@@ -72,9 +72,10 @@
     "6": {
       "team_a": "Shadow Legionaries",
       "team_b": "Fire Vikings",
-      "score": "0-0-0",
-      "status": "Pending",
-      "match_time": "2026-10-25T23:00:00+00:00"
+      "score": "0-0-3",
+      "status": "Completed",
+      "match_time": "2026-10-25T23:00:00+00:00",
+      "winner": "Fire Vikings"
     }
   }
 }
