@@ -11,5 +11,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Operation Sunrise": {
+    "name": "Operation Sunrise",
+    "date": "October 26",
+    "status": "Declaration Issued",
+    "side_a": [
+      "Fire Vikings"
+    ],
+    "side_b": [
+      "Shadow Legionaries"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
