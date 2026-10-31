@@ -402,8 +402,7 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Shadow Legionaries",
-    "underInvasion": false,
-    "effect": "nuke-active"
+    "underInvasion": false
   },
   {
     "id": "id44",
