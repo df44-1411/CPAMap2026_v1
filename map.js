@@ -593,7 +593,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Fire Vikings",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "nuke-active"
   },
   {
     "id": "id65",
