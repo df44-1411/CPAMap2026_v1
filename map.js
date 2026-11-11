@@ -428,7 +428,6 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Freeland",
     "underInvasion": true,
-    "hotspot": true,
     "attackerColor": "#87f1ff"
   },
   {
