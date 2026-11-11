@@ -158,8 +158,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Fire Vikings",
-    "underInvasion": false,
-    "effect": "bomb-active"
+    "underInvasion": false
   },
   {
     "id": "id17",
@@ -168,8 +167,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Fire Vikings",
-    "underInvasion": false,
-    "effect": "bomb-active"
+    "underInvasion": false
   },
   {
     "id": "id18",
