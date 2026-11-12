@@ -667,8 +667,7 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "Templars",
-    "underInvasion": true,
-    "attackerColor": "#000dff"
+    "underInvasion": false
   },
   {
     "id": "id73",
