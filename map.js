@@ -668,7 +668,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "Templars",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "nuke-active"
   },
   {
     "id": "id73",
