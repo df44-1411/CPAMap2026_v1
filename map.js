@@ -184,7 +184,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Help Force",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#f1c40f"
   },
   {
     "id": "id20",
