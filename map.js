@@ -184,8 +184,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "CAPITAL",
     "controller": "Templars",
-    "underInvasion": false,
-    "effect": "nuke-active"
+    "underInvasion": false
   },
   {
     "id": "id20",
