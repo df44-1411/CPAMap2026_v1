@@ -988,6 +988,9 @@ Highcharts.mapChart('container', {
 function(chart) {
   // Loop para adicionar as classes CSS (.WV, .ACP, etc)
   chart.series[0].points.forEach(function(point) {
+    if (point.controller === "The Bastille Vanguard"){
+        point.graphic.addClass('TBV');
+    }
     if (point.controller === "Sidies Rangers"){
         point.graphic.addClass('SiR');
     }
