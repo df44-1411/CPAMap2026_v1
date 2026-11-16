@@ -576,8 +576,9 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false,
-    "hotspot": true
+    "underInvasion": true,
+    "hotspot": true,
+    "attackerColor": "#87f1ff"
   },
   {
     "id": "id63",
