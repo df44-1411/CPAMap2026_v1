@@ -195,7 +195,8 @@ var mapData = [
     "type": "NORMAL",
     "controller": "Templars",
     "underInvasion": true,
-    "attackerColor": "#060505"
+    "attackerColor": "#060505",
+    "hotspot": true
   },
   {
     "id": "id21",
@@ -575,7 +576,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id63",
@@ -629,7 +631,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "NORMAL",
     "controller": "Freeland",
-    "underInvasion": false
+    "underInvasion": false,
+    "hotspot": true
   },
   {
     "id": "id69",
