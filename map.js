@@ -194,8 +194,7 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Templars",
-    "underInvasion": true,
-    "attackerColor": "#060505",
+    "underInvasion": false,
     "hotspot": true
   },
   {
