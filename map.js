@@ -430,7 +430,8 @@ var mapData = [
     "continent": "Tundropa",
     "type": "CAPITAL",
     "controller": "SnowWalkers of Club Penguin",
-    "underInvasion": false
+    "underInvasion": true,
+    "attackerColor": "#000050"
   },
   {
     "id": "id47",
