@@ -24,5 +24,18 @@
     ],
     "ending_date": "Nov 18",
     "winner": null
+  },
+  "War of Vouill\u00e9": {
+    "name": "War of Vouill\u00e9",
+    "date": "Nov 17",
+    "status": "Ongoing Conflict",
+    "side_a": [
+      "Dark Warriors"
+    ],
+    "side_b": [
+      "Army of CP"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
