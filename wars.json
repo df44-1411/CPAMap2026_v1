@@ -37,5 +37,19 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "Siderian Holy War (Raid War)": {
+    "name": "Siderian Holy War (Raid War)",
+    "date": "Nov 18",
+    "status": "Ongoing Conflict",
+    "side_a": [
+      "Templars"
+    ],
+    "side_b": [
+      "Army of CP",
+      "Dark Warriors"
+    ],
+    "ending_date": null,
+    "winner": null
   }
 }
