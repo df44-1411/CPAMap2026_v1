@@ -11,5 +11,18 @@
     ],
     "ending_date": null,
     "winner": null
+  },
+  "DW vs Romans war": {
+    "name": "DW vs Romans war",
+    "date": "Nov 16",
+    "status": "Ended",
+    "side_a": [
+      "Dark Warriors"
+    ],
+    "side_b": [
+      "Romans"
+    ],
+    "ending_date": "Nov 18",
+    "winner": null
   }
 }
