@@ -439,9 +439,8 @@ var mapData = [
     "path": "M746,308L746,308C740,313,739,313,739,313L724,313L715,310L715,310L715,309C715,306,715,305,716,302L716,298L716,294C718,290,718,286,718,282C718,281,718,280,719,278L722,278L727,278L727,278L738,277L740,277L744,274L747,274C748,274,747,274,751,276L752,276L754,276L754,277L754,277L754,277C755,285,748,305,746,308",
     "continent": "Tundropa",
     "type": "NORMAL",
-    "controller": "Dark Warriors",
-    "underInvasion": true,
-    "attackerColor": "#2b8b1f"
+    "controller": "Army of CP",
+    "underInvasion": false
   },
   {
     "id": "id48",
