@@ -234,7 +234,8 @@ var mapData = [
     "continent": "Mammothica",
     "type": "NORMAL",
     "controller": "Army of CP",
-    "underInvasion": false
+    "underInvasion": false,
+    "effect": "bomb-active"
   },
   {
     "id": "id25",
